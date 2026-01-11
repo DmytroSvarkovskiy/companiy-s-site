@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { GlassCard, ThemeToggle } from "@/entities";
 import { Button, Input } from "@/shared";
-import { ButtonRevealIcon } from "@/shared/index.client";
+import { ButtonRevealIcon, CustomSheet } from "@/shared/index.client";
 
 export default function Home() {
   return (
@@ -24,16 +24,24 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-title">Dark glass test</h1>
         <p className="text-muted-foreground">Скроль вниз — на фоні має бути видно заломлення.</p>
         <Button type="button">sdf</Button>
-        <ButtonRevealIcon
-          variant="default"
-          className="w-40"
-          icon={<ChevronRight className="size-6" />}
-        >
-          Continue
-        </ButtonRevealIcon>
+
         <ThemeToggle />
         {/* normal glass */}
         <Input />
+        <CustomSheet
+          showClose={false}
+          trigger={
+            <ButtonRevealIcon
+              variant="default"
+              className="w-40"
+              icon={<ChevronRight className="size-6" />}
+            >
+              Continue
+            </ButtonRevealIcon>
+          }
+        >
+          sdfsd
+        </CustomSheet>
         <GlassCard
           blur={2}
           className="h-37.5 sticky z-50 top-5 "

@@ -33,13 +33,13 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={theme}>
-      <I18nProviderClient locale={locale}>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <I18nProviderClient locale={locale}>
           <Header />
           <main> {children}</main>
           <Footer />
-        </body>
-      </I18nProviderClient>
+        </I18nProviderClient>
+      </body>
     </html>
   );
 }
