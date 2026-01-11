@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @layer base {
   :root {
     --radius-base: 16px;
@@ -24,11 +23,13 @@
 
     --glass-bg: #bbc2f133;
     --glass-border: rgba(183, 187, 215, 0.25);
-    --glass-refract: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.55) 0%,
-        rgba(255, 255, 255, 0.08) 35%,
-        rgba(255, 255, 255, 0.0) 60%,
-        rgba(255, 255, 255, 0.18) 100%);
+    --glass-refract: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.08) 35%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.18) 100%
+    );
 
     --brand-border-gradient:
       linear-gradient(97.4deg, rgba(255, 110, 3, 0.55) -5.28%, rgba(255, 110, 3, 0) 100.93%),
@@ -45,18 +46,19 @@
     --number: #d0d6ee;
 
     --muted: rgba(70, 75, 108, 0.18);
-    --border: rgba(255, 255, 255, 0.10);
+    --border: rgba(255, 255, 255, 0.1);
 
     --glass-bg: #464b6c33;
     --glass-border: rgba(255, 255, 255, 0.05);
-    --glass-refract: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.22) 0%,
-        rgba(255, 255, 255, 0.06) 40%,
-        rgba(255, 255, 255, 0.0) 65%,
-        rgba(255, 255, 255, 0.10) 100%)
+    --glass-refract: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.06) 40%,
+      rgba(255, 255, 255, 0) 65%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
   }
 }
-
 
 @theme inline {
   /* shadcn base */
@@ -123,7 +125,6 @@
   /* 1440px */
 }
 
-
 @layer base {
   * {
     @apply border-border;
@@ -139,13 +140,14 @@
   }
 }
 
-
 @layer utilities {
   .glass-card {
     position: relative;
     border-radius: inherit;
     background-color: var(--glass-bg);
     border: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2) brightness(1.05);
+    backdrop-filter: blur(18px) saturate(1.2) brightness(1.05);
   }
 
   .glass-card::before {
@@ -208,5 +210,4 @@
   .btn-brand--on {
     --brand-border-opacity: 1;
   }
-
 }

@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { GlassCard, ThemeToggle } from "@/entities";
-import { Button, ButtonRevealIcon } from "@/shared";
+import { Button, Input } from "@/shared";
+import { ButtonRevealIcon } from "@/shared/index.client";
 
 export default function Home() {
   return (
@@ -32,7 +33,9 @@ export default function Home() {
         </ButtonRevealIcon>
         <ThemeToggle />
         {/* normal glass */}
+        <Input />
         <GlassCard
+          blur={2}
           className="h-37.5 sticky z-50 top-5 "
           contentClassName="p-6 flex  items-center justify-between"
         >

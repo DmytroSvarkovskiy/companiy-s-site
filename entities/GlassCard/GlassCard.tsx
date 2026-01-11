@@ -1,7 +1,9 @@
 "use client";
 
 import { LiquidGlass } from "@liquidglass/react";
-import type React from "react";
+import React from "react";
+
+const isIPhone = () => typeof navigator !== "undefined" && /iPhone|iPod/.test(navigator.userAgent);
 
 type GlassCardProps = {
   className?: string;
@@ -22,14 +24,30 @@ export function GlassCard({
   contentClassName,
   children,
   radius = 24,
-  blur = 0.5,
+  blur = 1.5,
   contrast = 1,
   brightness = 1,
   saturation = 1,
-  displacementScale = 0.3,
+  displacementScale = 0.2,
   shadowIntensity = 0,
-  elasticity = 0.3,
+  elasticity = 0.2,
 }: GlassCardProps) {
+  const [useFancy, setUseFancy] = React.useState(true);
+
+  React.useEffect(() => {
+    setUseFancy(!isIPhone());
+  }, []);
+
+  if (!useFancy) {
+    return (
+      <div className={className} style={{ borderRadius: radius }}>
+        <div className="h-full w-full rounded-[inherit] glass-card">
+          <div className={contentClassName}>{children}</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
       <LiquidGlass
