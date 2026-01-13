@@ -9,7 +9,7 @@ export const Header = ({ currentTheme }: TProps) => {
   return (
     <header className="sticky top-4 z-50 md:top-6 xl:top-8 2xl:top-10">
       <div className="container">
-        <GlassCard radius={999}>
+        <GlassCard radius={999} blur={2.2}>
           <div className="p-4 md:p-4.5 2xl:p-5.5 h-16 md:h-22.5 w-full flex items-center justify-between">
             <Link href={"/"}>
               <Image

@@ -36,13 +36,15 @@ export function DesktopNav() {
             radius={16}
             className="w-45 overflow-hidden"
             contentClassName="py-3 overflow-hidden"
-            blur={2}
+            blur={3}
+            displacementScale={2}
+            elasticity={0.5}
           >
-            <ul className="space-y-1  ">
+            <ul className="space-y-1">
               <li>
                 <Link
                   href="#restup"
-                  className="block  px-4 py-1 text-sm text-foreground hover:text-primary"
+                  className="block px-4 py-1 text-sm text-foreground hover:text-primary"
                 >
                   Restup
                 </Link>
@@ -50,7 +52,7 @@ export function DesktopNav() {
               <li>
                 <Link
                   href="#ecommerce"
-                  className="block  px-4 py-1 text-sm text-foreground hover:text-primary"
+                  className="block px-4 py-1 text-sm text-foreground hover:text-primary"
                 >
                   E-commerce
                 </Link>

@@ -44,12 +44,12 @@ export const ThemeToggle = ({ defaultTheme }: TProps) => {
       className={cn(
         "relative inline-flex h-8 w-18 items-center rounded-full p-1",
 
-        "bg-card border border-border/70 shadow-inner",
+        "bg-background border border-border/70 shadow-inner",
         "outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2",
         "ring-offset-background",
         "motion-reduce:transition-none",
         pending && "opacity-80",
-        isDark && "bg-glassBg border-border/50",
+        isDark && "  border-border/50",
       )}
     >
       <span className="pointer-events-none absolute inset-1 flex items-center justify-between px-1.5">

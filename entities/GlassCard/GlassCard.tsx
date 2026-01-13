@@ -1,10 +1,7 @@
 "use client";
 
 import { LiquidGlass } from "@liquidglass/react";
-import React from "react";
 import { cn } from "@/shared/utils";
-
-const isIPhone = () => typeof navigator !== "undefined" && /iPhone|iPod/.test(navigator.userAgent);
 
 type GlassCardProps = {
   className?: string;
@@ -32,53 +29,40 @@ export function GlassCard({
   saturation = 1,
   displacementScale = 0.2,
   shadowIntensity = 0,
-  elasticity = 0.2,
+  elasticity = 0.3,
   hoverGradient,
 }: GlassCardProps) {
-  const [useFancy, setUseFancy] = React.useState(true);
-
-  React.useEffect(() => {
-    setUseFancy(!isIPhone());
-  }, []);
-
-  if (!useFancy) {
-    return (
-      <div className={className} style={{ borderRadius: radius }}>
-        <div
-          className={cn(
-            "h-full w-full rounded-[inherit] glass-card",
-            hoverGradient && "glass-card--hoverGradient",
-          )}
-        >
-          <div className={contentClassName}>{children}</div>
-        </div>
-      </div>
-    );
-  }
+  const CardShell = (
+    <div
+      className={cn("relative isolate overflow-hidden rounded-[inherit] h-full w-full", className)}
+      style={{ borderRadius: radius }}
+    >
+      <div className={cn("relative z-10 h-full w-full", contentClassName)}>{children}</div>
+    </div>
+  );
 
   return (
-    <div className={className}>
-      <LiquidGlass
-        zIndex={1}
-        borderRadius={radius}
-        blur={blur}
-        contrast={contrast}
-        brightness={brightness}
-        saturation={saturation}
-        displacementScale={displacementScale}
-        shadowIntensity={shadowIntensity}
-        elasticity={elasticity}
-        className="h-full w-full shadow-none! bg-transparent! "
+    <LiquidGlass
+      zIndex={0}
+      borderRadius={radius}
+      blur={blur}
+      contrast={contrast}
+      brightness={brightness}
+      saturation={saturation}
+      displacementScale={displacementScale}
+      shadowIntensity={shadowIntensity}
+      elasticity={elasticity}
+      className="bg-transparent! shadow-none!"
+    >
+      <div
+        className={cn(
+          "glass-card h-full w-full rounded-[inherit]",
+          hoverGradient && "glass-card--hoverGradient",
+        )}
+        style={{ borderRadius: radius }}
       >
-        <div
-          className={cn(
-            "h-full w-full rounded-[inherit] glass-card",
-            hoverGradient && "glass-card--hoverGradient",
-          )}
-        >
-          <div className={contentClassName}>{children}</div>
-        </div>
-      </LiquidGlass>
-    </div>
+        {CardShell}
+      </div>
+    </LiquidGlass>
   );
 }
