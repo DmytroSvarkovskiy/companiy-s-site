@@ -45,26 +45,24 @@ export const ThemeToggle = ({ defaultTheme }: TProps) => {
         "relative inline-flex h-8 w-18 items-center rounded-full p-1",
 
         "bg-card border border-border/70 shadow-inner",
-        "dark:bg-glassBg dark:border-border/50",
         "outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2",
         "ring-offset-background",
         "motion-reduce:transition-none",
         pending && "opacity-80",
+        isDark && "bg-glassBg border-border/50",
       )}
     >
       <span className="pointer-events-none absolute inset-1 flex items-center justify-between px-1.5">
         <Moon
           className={cn(
             "size-4 transition-opacity duration-300",
-            "text-header-fg/80 dark:text-header-fg/80",
-            isDark ? "opacity-0" : "opacity-70",
+            isDark ? "opacity-0 text-header-fg/80" : "opacity-70 text-header-fg/80",
           )}
         />
         <Sun
           className={cn(
             "size-4 transition-opacity duration-300",
-            "text-header-fg/80 dark:text-header-fg/80",
-            isDark ? "opacity-70" : "opacity-0",
+            isDark ? "opacity-70 text-header-fg/80" : "opacity-0 text-header-fg/80",
           )}
         />
       </span>
@@ -72,12 +70,10 @@ export const ThemeToggle = ({ defaultTheme }: TProps) => {
       <span
         className={cn(
           "absolute left-1 top-0.75 grid h-6 w-6 place-items-center rounded-full",
-
           "bg-foreground text-background shadow-sm",
-          "dark:bg-background dark:text-foreground",
           "border border-border/60",
           "transition-transform duration-300 ease-[cubic-bezier(.2,.8,.2,1)] will-change-transform",
-          isDark ? "-translate-x-px" : "translate-x-9.75",
+          isDark ? "-translate-x-px bg-chip-icon/60 text-foreground" : "translate-x-9.75",
         )}
         aria-hidden="true"
       >

@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "../globals.css";
 import { cookies } from "next/headers";
 import { getCurrentLocale } from "@/lib";
 import { I18nProviderClient } from "@/lib/index.client";
 import { COOKIES_KEYS } from "@/shared/consts";
+import { cn } from "@/shared/utils";
 import { Footer, Header } from "@/widgets";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -33,9 +31,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={theme}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={cn(ibmPlexSans.variable, "antialiased flex flex-col")}>
         <I18nProviderClient locale={locale}>
-          <Header />
+          <Header currentTheme={theme as "light" | "dark"} />
           <main> {children}</main>
           <Footer />
         </I18nProviderClient>

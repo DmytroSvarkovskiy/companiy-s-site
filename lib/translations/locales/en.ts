@@ -1,12 +1,18 @@
 export default {
   nav: {
+    showcases: "Showcases",
     ourProducts: "Our products",
     portfolio: "Portfolio",
     services: "Services",
     aboutUs: "About us",
+    contactUs: "Contact us",
     restup: "Restup",
     ecommerce: "E-commerce",
-    contactUs: "Contact us",
+    techStack: "Tech stack",
+    ourApproach: "Our approach",
+    ourTeam: "Our team",
+    kitapp: "Kitapp",
+    partners: "Partners",
   },
 
   hero: {

@@ -1,12 +1,18 @@
 export default {
   nav: {
+    showcases: "Кейси",
     ourProducts: "Наші продукти",
     portfolio: "Портфоліо",
     services: "Послуги",
     aboutUs: "Про нас",
+    contactUs: "Звʼязатися з нами",
     restup: "Restup",
-    ecommerce: "E-commerce",
-    contactUs: "Контакти",
+    ecommerce: "Е-комерс",
+    techStack: "Технологічний стек",
+    ourApproach: "Наш підхід",
+    ourTeam: "Наша команда",
+    kitapp: "Kitapp",
+    partners: "Партнери",
   },
 
   hero: {
