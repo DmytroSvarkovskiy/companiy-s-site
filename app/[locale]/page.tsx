@@ -43,9 +43,10 @@ export default function Home() {
           sdfsd
         </CustomSheet>
         <GlassCard
+          hoverGradient
           blur={2}
           className="h-37.5 sticky z-50 top-5 "
-          contentClassName="p-6 flex  items-center justify-between"
+          contentClassName="p-6 flex  items-center justify-between "
         >
           <div>
             <div className="text-xs uppercase tracking-widest text-muted-foreground">card</div>

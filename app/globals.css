@@ -23,6 +23,9 @@
 
     --glass-bg: #bbc2f133;
     --glass-border: rgba(183, 187, 215, 0.25);
+    --menu-bg: #d0d6ee;
+    --menu-fg: #2c3046;
+    --menu-hover: rgba(44, 48, 70, 0.08);
     --glass-refract: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.55) 0%,
@@ -34,6 +37,12 @@
     --brand-border-gradient:
       linear-gradient(97.4deg, rgba(255, 110, 3, 0.55) -5.28%, rgba(255, 110, 3, 0) 100.93%),
       linear-gradient(96.27deg, rgba(255, 110, 3, 0) -5.02%, rgba(255, 110, 3, 0.25) 112.44%);
+
+    --menu-hover-bg: linear-gradient(
+      180deg,
+      rgba(70, 75, 108, 0.15) 0%,
+      rgba(255, 110, 3, 0.15) 100%
+    );
   }
 
   :root.dark {
@@ -50,12 +59,20 @@
 
     --glass-bg: #464b6c33;
     --glass-border: rgba(255, 255, 255, 0.05);
+    --menu-bg: #2c3046;
+    --menu-fg: #a9b1d5;
+    --menu-hover: rgba(169, 177, 213, 0.12);
     --glass-refract: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.22) 0%,
       rgba(255, 255, 255, 0.06) 40%,
       rgba(255, 255, 255, 0) 65%,
       rgba(255, 255, 255, 0.1) 100%
+    );
+    --menu-hover-bg: linear-gradient(
+      180deg,
+      rgba(70, 75, 108, 0.15) 0%,
+      rgba(255, 110, 3, 0.15) 100%
     );
   }
 }
@@ -83,7 +100,7 @@
   --color-accent: color-mix(in oklch, var(--brand-primary) 12%, transparent);
   --color-accent-foreground: var(--fg);
 
-  --color-destructive: #ef4444;
+  --color-destructive: #ff383c;
   --color-destructive-foreground: #ffffff;
 
   --color-border: var(--border);
@@ -97,6 +114,10 @@
   --color-chip-bg: var(--chip-bg);
   --color-chip-icon: var(--chip-icon);
   --color-glassBg: var(--glass-bg);
+
+  --color-menu: var(--menu-bg);
+  --color-menu-foreground: var(--menu-fg);
+  --color-menu-hover: var(--menu-hover);
 
   /* radius scale */
   --radius-sm: calc(var(--radius-base) - 6px);
@@ -209,5 +230,27 @@
 
   .btn-brand--on {
     --brand-border-opacity: 1;
+  }
+  .glass-card--hoverGradient {
+    --glass-hover-opacity: 0;
+    --glass-hover-duration: 200ms;
+    --glass-hover-strength: 1;
+  }
+
+  .glass-card--hoverGradient::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+
+    background: var(--menu-hover-bg);
+    opacity: calc(var(--glass-hover-opacity) * var(--glass-hover-strength));
+    transition: opacity var(--glass-hover-duration) ease;
+  }
+
+  .glass-card--hoverGradient:hover,
+  .glass-card--hoverGradient:focus-visible {
+    --glass-hover-opacity: 1;
   }
 }

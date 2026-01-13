@@ -2,6 +2,7 @@
 
 import { LiquidGlass } from "@liquidglass/react";
 import React from "react";
+import { cn } from "@/shared/utils";
 
 const isIPhone = () => typeof navigator !== "undefined" && /iPhone|iPod/.test(navigator.userAgent);
 
@@ -17,6 +18,7 @@ type GlassCardProps = {
   displacementScale?: number;
   shadowIntensity?: number;
   elasticity?: number;
+  hoverGradient?: boolean;
 };
 
 export function GlassCard({
@@ -31,6 +33,7 @@ export function GlassCard({
   displacementScale = 0.2,
   shadowIntensity = 0,
   elasticity = 0.2,
+  hoverGradient,
 }: GlassCardProps) {
   const [useFancy, setUseFancy] = React.useState(true);
 
@@ -41,7 +44,12 @@ export function GlassCard({
   if (!useFancy) {
     return (
       <div className={className} style={{ borderRadius: radius }}>
-        <div className="h-full w-full rounded-[inherit] glass-card">
+        <div
+          className={cn(
+            "h-full w-full rounded-[inherit] glass-card",
+            hoverGradient && "glass-card--hoverGradient",
+          )}
+        >
           <div className={contentClassName}>{children}</div>
         </div>
       </div>
@@ -60,9 +68,14 @@ export function GlassCard({
         displacementScale={displacementScale}
         shadowIntensity={shadowIntensity}
         elasticity={elasticity}
-        className="h-full w-full shadow-none! bg-transparent!"
+        className="h-full w-full shadow-none! bg-transparent! "
       >
-        <div className="h-full w-full rounded-[inherit] glass-card">
+        <div
+          className={cn(
+            "h-full w-full rounded-[inherit] glass-card",
+            hoverGradient && "glass-card--hoverGradient",
+          )}
+        >
           <div className={contentClassName}>{children}</div>
         </div>
       </LiquidGlass>
