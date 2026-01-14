@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { orbitron } from "@/app/[locale]/layout";
 import { GlassCard, ThemeToggle } from "@/entities";
-import { BurgerMenu, DesktopNav } from "./ui";
+import { cn } from "@/shared/utils";
+import { BurgerMenu, ChangeLang, DesktopNav } from "./ui";
 
 type TProps = { currentTheme: "dark" | "light" };
 
@@ -11,7 +13,7 @@ export const Header = ({ currentTheme }: TProps) => {
       <div className="container">
         <GlassCard radius={999} blur={2.2}>
           <div className="p-4 md:p-4.5 2xl:p-5.5 h-16 md:h-22.5 w-full flex items-center justify-between">
-            <Link href={"/"}>
+            <Link href={"/"} className="flex items-center gap-1 text-header-fg ">
               <Image
                 loading="eager"
                 alt="logo"
@@ -19,15 +21,19 @@ export const Header = ({ currentTheme }: TProps) => {
                 width={60}
                 height={70}
                 className="w-8 h-7 md:w-9 md:h-11 2xl:w-9.5 2xl:h-11.5"
-              />
+              />{" "}
+              <p className={cn(orbitron.className, "text-18 tracking-wider hidden lg:block")}>
+                IT GLOBAL
+              </p>
             </Link>
-            <div className="flex gap-4 items-center">
-              <ThemeToggle defaultTheme={currentTheme} />
-              <div className="block md:hidden">
-                <BurgerMenu />
-              </div>
+            <div className="flex gap-7 items-center">
               <div className="hidden md:block">
                 <DesktopNav />
+              </div>
+              <ThemeToggle defaultTheme={currentTheme} />
+              <ChangeLang />
+              <div className="block md:hidden">
+                <BurgerMenu />
               </div>
             </div>
           </div>

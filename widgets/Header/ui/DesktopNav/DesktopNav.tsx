@@ -5,14 +5,14 @@ import { GlassCard } from "@/entities";
 import { useScopedI18n } from "@/lib/index.client";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/index.client";
 import { cn } from "@/shared/utils";
-import { DESKTOP_NAV_ITEMS } from "./links";
+import { NAV_ITEMS } from "../models/links";
 
 export function DesktopNav() {
   const t = useScopedI18n("nav");
 
   return (
-    <nav className="flex items-center gap-8">
-      {DESKTOP_NAV_ITEMS.map((item) => {
+    <nav className="flex items-center gap-4 xl:gap-8 text-14 lg:text-16">
+      {NAV_ITEMS.map((item) => {
         const hasChildren = !!item.children?.length;
 
         if (!hasChildren) {
@@ -20,7 +20,7 @@ export function DesktopNav() {
             <Link
               key={item.key}
               href={item.href}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
+              className=" font-medium text-header-fg hover:text-primary transition-colors duration-200"
             >
               {t(item.key)}
             </Link>
@@ -33,7 +33,7 @@ export function DesktopNav() {
               <button
                 type="button"
                 className={cn(
-                  "text-sm font-medium text-foreground hover:text-primary transition-colors duration-200",
+                  " font-medium text-header-fg hover:text-primary transition-colors duration-200",
                   "bg-transparent px-0 shadow-none outline-none",
                   "focus-visible:ring-0 focus-visible:ring-offset-0",
                   "data-[state=open]:text-primary",
@@ -47,7 +47,7 @@ export function DesktopNav() {
               side="bottom"
               align="center"
               sideOffset={10}
-              className="bg-transparent border-0 p-0 shadow-none w-fit mt-8"
+              className="bg-transparent border-0 p-0 shadow-none w-fit mt-5 md:mt-7 xl:mt-8"
             >
               <GlassCard
                 radius={16}
@@ -62,7 +62,7 @@ export function DesktopNav() {
                     <li key={child.key}>
                       <Link
                         href={child.href}
-                        className="block px-4 py-1 text-sm text-foreground hover:text-primary transition-colors duration-200"
+                        className="block px-4 py-1  text-header-fg hover:text-primary transition-colors duration-200"
                       >
                         {t(child.key)}
                       </Link>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useScopedI18n } from "@/lib/index.client";
 import { CustomSheet } from "@/shared/index.client";
-import { NAV_ITEMS } from "./links";
+import { NAV_ITEMS } from "../models/links";
 
 export const BurgerMenu = () => {
   const t = useScopedI18n("nav");

@@ -14,7 +14,8 @@ export default {
     kitapp: "Kitapp",
     partners: "Partners",
   },
-
+  en: "English",
+  uk: "Ukrainian",
   hero: {
     weBuildAppWith: "We build apps with {tech}?",
   },
