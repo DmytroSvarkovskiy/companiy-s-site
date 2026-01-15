@@ -14,7 +14,7 @@
     --header-fg: #0e101d;
     --block-fg: #2c3046;
     --number: #40445e;
-
+    --mobile-input-btn: #ffffff;
     --muted: #d0d6ee;
     --border: rgba(14, 16, 29, 0.12);
 
@@ -52,6 +52,11 @@
     --glass-edge-top: rgba(255, 255, 255, 0.35);
     --glass-edge-bottom: rgba(255, 255, 255, 0.12);
     --input-border: #737e8d;
+
+    --scrollbar-size: 6px;
+    --scrollbar-thumb: rgba(14, 16, 29, 0.28);
+    --scrollbar-thumb-hover: rgba(14, 16, 29, 0.45);
+    --scrollbar-track: transparent;
   }
 
   :root.dark {
@@ -62,7 +67,7 @@
     --header-fg: #ffffff;
     --block-fg: #ffffff;
     --number: #d0d6ee;
-
+    --mobile-input-btn: #40445e;
     --muted: rgba(70, 75, 108, 0.18);
     --border: rgba(255, 255, 255, 0.1);
 
@@ -92,6 +97,10 @@
     --glass-edge-top: rgba(255, 255, 255, 0.18);
     --glass-edge-bottom: rgba(0, 0, 0, 0.28);
     --input-border: #737e8d;
+
+    --scrollbar-thumb: rgba(255, 255, 255, 0.35);
+    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.55);
+    --scrollbar-track: transparent;
   }
 }
 
@@ -136,7 +145,7 @@
   --color-menu: var(--menu-bg);
   --color-menu-foreground: var(--menu-fg);
   --color-menu-hover: var(--menu-hover);
-
+  --color-phone-btn: var(--mobile-input-btn);
   /* radius scale */
   --radius-sm: calc(var(--radius-base) - 6px);
   --radius-md: calc(var(--radius-base) - 4px);
@@ -146,7 +155,8 @@
   --radius-full: 9999px;
 
   /* Typography scale */
-
+  --text-12: 0.75rem; /* 12px */
+  --text-12--line-height: 1rem; /* 16px */
   --text-14: 0.875rem; /* 14px */
   --text-14--line-height: 1.25rem; /* 20px */
   --text-16: 1rem; /* 16px */
@@ -185,6 +195,29 @@
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+  *::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   }
 }
 

@@ -43,7 +43,7 @@ export function GlassCard({
 
   return (
     <LiquidGlass
-      zIndex={0}
+      zIndex={1}
       borderRadius={radius}
       blur={blur}
       contrast={contrast}

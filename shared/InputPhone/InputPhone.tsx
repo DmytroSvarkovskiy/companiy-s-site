@@ -11,6 +11,7 @@ import {
 import "react-international-phone/style.css";
 
 import { GlassCard } from "@/entities";
+import { useCurrentLocale } from "@/lib/index.client";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import { cn } from "@/shared/utils";
 import { InputField } from "../InputField/InputField";
@@ -23,10 +24,19 @@ type InputPhoneProps = {
   id?: string;
 };
 
+const getCountryName = (iso2: string, locale: string) => {
+  try {
+    const displayNames = new Intl.DisplayNames([locale], { type: "region" });
+    return displayNames.of(iso2.toUpperCase());
+  } catch {
+    return iso2;
+  }
+};
+
 export function InputPhone({ label, error, value, onChange, id }: InputPhoneProps) {
   const autoId = React.useId();
   const inputId = id ?? autoId;
-
+  const locale = useCurrentLocale();
   const [open, setOpen] = React.useState(false);
 
   const { inputValue, handlePhoneValueChange, country, setCountry, inputRef } = usePhoneInput({
@@ -40,21 +50,22 @@ export function InputPhone({ label, error, value, onChange, id }: InputPhoneProp
       <div
         className={cn(
           "flex items-center h-12 rounded-md",
-
           "bg-transparent border border-input",
-          "transition-[border-color,box-shadow]",
-
+          "transition-[border-color,box-shadow] duration-200",
           "focus-within:border-primary",
-          "focus-within:ring-2 focus-within:ring-primary/40",
+          "focus-within:ring-3 focus-within:ring-primary/40",
+          error &&
+            "border-destructive focus-visible:ring-destructive/40 focus-within:ring-destructive/40",
         )}
       >
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <button
               type="button"
+              title={country.name}
               className={cn(
-                "flex items-center gap-1 px-3 h-full text-16 text-header-fg",
-                "hover:bg-muted/40",
+                "flex bg-phone-btn items-center gap-1 px-3 h-full text-16 text-header-fg rounded-l-md w-27",
+                "hover:bg-accent-foreground/10 transition-colors duration-200",
                 "focus:outline-none",
               )}
             >
@@ -70,11 +81,12 @@ export function InputPhone({ label, error, value, onChange, id }: InputPhoneProp
             sideOffset={6}
             className="p-0 bg-transparent border-0 shadow-none"
           >
-            <GlassCard className="w-fit max-h-72 overflow-auto">
+            <GlassCard className="w-fit max-h-72 overflow-y-auto " radius={16}>
               <ul className="py-1 w-full">
                 {defaultCountries.map((c) => {
                   const parsed = parseCountry(c);
-
+                  const active = parsed.iso2 === country.iso2;
+                  const localizedName = getCountryName(parsed.iso2, locale) ?? parsed.name;
                   return (
                     <li key={parsed.iso2}>
                       <button
@@ -86,10 +98,11 @@ export function InputPhone({ label, error, value, onChange, id }: InputPhoneProp
                         className={cn(
                           "w-full flex items-center gap-2 px-3 py-2 text-16 text-left",
                           "hover:bg-muted/40",
+                          active && "text-primary bg-primary/10",
                         )}
                       >
                         <FlagImage iso2={parsed.iso2} />
-                        <span className="flex-1">{parsed.name}</span>
+                        <span className="flex-1">{localizedName}</span>
                         <span className="text-muted-foreground">+{parsed.dialCode}</span>
                       </button>
                     </li>
@@ -110,7 +123,8 @@ export function InputPhone({ label, error, value, onChange, id }: InputPhoneProp
           value={inputValue}
           onChange={handlePhoneValueChange}
           error={error}
-          wrapperClassName="flex-1"
+          wrapperClassName="flex-1 h-full"
+          errorClassname="-left-28"
           inputClassName={cn(
             "h-full w-full",
             "border-0 rounded-none",

@@ -8,6 +8,7 @@ type InputFieldProps = {
   hint?: string;
   wrapperClassName?: string;
   inputClassName?: string;
+  errorClassname?: string;
 } & React.ComponentProps<typeof Input>;
 
 export const InputField = ({
@@ -17,15 +18,16 @@ export const InputField = ({
   id,
   wrapperClassName,
   inputClassName,
+  errorClassname,
   ...props
 }: InputFieldProps) => {
   const autoId = React.useId();
   const inputId = id ?? autoId;
 
   return (
-    <div className={cn("relative flex-1", wrapperClassName)}>
+    <div className={cn("relative", wrapperClassName)}>
       {label && (
-        <label htmlFor={inputId} className="mb-1 block text-sm font-medium">
+        <label htmlFor={inputId} className="mb-1 block text-14 font-medium">
           {label}
         </label>
       )}
@@ -39,11 +41,14 @@ export const InputField = ({
       />
 
       {error ? (
-        <p id={`${inputId}-error`} className="absolute -bottom-5 text-xs text-destructive">
+        <p
+          id={`${inputId}-error`}
+          className={cn("absolute -bottom-6 text-12 text-destructive", errorClassname)}
+        >
           {error}
         </p>
       ) : (
-        hint && <p className="mt-1 text-xs text-muted-foreground">{hint}</p>
+        hint && <p className="mt-1 text-12 text-muted-foreground">{hint}</p>
       )}
     </div>
   );
