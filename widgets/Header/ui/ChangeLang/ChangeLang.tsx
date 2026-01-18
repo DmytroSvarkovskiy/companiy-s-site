@@ -28,7 +28,7 @@ export const ChangeLang = () => {
           className="group flex items-center gap-3 data-[state=open]:text-primary text-header-fg font-medium"
         >
           <Image alt="locale" width={24} height={24} src={icons[locale]} />
-          <p className="hidden lg:block">{t(locale)}</p>
+          <p className="hidden lg:block text-14 xl:text-16">{t(locale)}</p>
           <ChevronDown className="size-4.5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
         </button>
       </HoverCardTrigger>

@@ -13,7 +13,7 @@ export const ContactFormFields = () => {
     formState: { errors },
   } = useFormContext<TForm>();
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-5">
       <InputField
         placeholder={t("name")}
         {...register("name", { required: t("fieldRequired") })}

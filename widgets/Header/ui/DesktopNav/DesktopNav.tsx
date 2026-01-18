@@ -11,7 +11,7 @@ export function DesktopNav() {
   const t = useScopedI18n("nav");
 
   return (
-    <nav className="flex items-center gap-4 xl:gap-8 text-14 lg:text-16">
+    <nav className="flex items-center gap-4 xl:gap-8 text-14 xl:text-16">
       {NAV_ITEMS.map((item) => {
         const hasChildren = !!item.children?.length;
 

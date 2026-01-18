@@ -21,7 +21,7 @@ export const ContactFormFooter = () => {
           type="submit"
           loading={isSubmitting}
           icon={<ChevronRight />}
-          className="flex-1 md:flex-none"
+          className="flex-1 md:flex-none h-14!"
         >
           {t("send")}
         </ButtonRevealIcon>
