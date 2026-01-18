@@ -6,6 +6,7 @@ export default {
     services: "Services",
     aboutUs: "About us",
     contactUs: "Contact us",
+
     restup: "Restup",
     ecommerce: "E-commerce",
     techStack: "Tech stack",
@@ -138,5 +139,20 @@ export default {
       text: "Tracking custom events and key events — monitor user engagement, retention, and revenue growth.",
       stack: "Firebase Analytics + GA4, AppMetrica, AppsFlyer",
     },
+  },
+  form: {
+    name: "Your Name*",
+    phone: "Your Phone Number*",
+    email: "Email Address*",
+    details: "Project Details*",
+    send: "Send",
+    recaptcha:
+      "* This site is protected by reCAPTCHA and is subject to the Privacy Policy and Terms of Service",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    fieldRequired: "Field is required",
+    invalidPhone: "Invalid Phone",
+    titleOk: "SEND SUCCESS!",
+    textOk: "Your request has been successfully submitted and we will contact you shortly.",
   },
 } as const;

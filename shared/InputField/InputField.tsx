@@ -43,12 +43,12 @@ export const InputField = ({
       {error ? (
         <p
           id={`${inputId}-error`}
-          className={cn("absolute -bottom-6 text-12 text-destructive", errorClassname)}
+          className={cn("absolute -bottom-5 text-14! text-destructive", errorClassname)}
         >
           {error}
         </p>
       ) : (
-        hint && <p className="mt-1 text-12 text-muted-foreground">{hint}</p>
+        hint && <p className="mt-1 text-14 text-muted-foreground">{hint}</p>
       )}
     </div>
   );

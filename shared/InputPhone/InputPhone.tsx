@@ -22,6 +22,7 @@ type InputPhoneProps = {
   value?: string;
   onChange?: (value: string) => void;
   id?: string;
+  placeholder?: string;
 };
 
 const getCountryName = (iso2: string, locale: string) => {
@@ -33,7 +34,7 @@ const getCountryName = (iso2: string, locale: string) => {
   }
 };
 
-export function InputPhone({ label, error, value, onChange, id }: InputPhoneProps) {
+export function InputPhone({ label, error, value, onChange, id, placeholder }: InputPhoneProps) {
   const autoId = React.useId();
   const inputId = id ?? autoId;
   const locale = useCurrentLocale();
@@ -42,7 +43,10 @@ export function InputPhone({ label, error, value, onChange, id }: InputPhoneProp
   const { inputValue, handlePhoneValueChange, country, setCountry, inputRef } = usePhoneInput({
     defaultCountry: "ua",
     value,
-    onChange: (data) => onChange?.(data.phone),
+    disableDialCodeAndPrefix: true,
+    onChange: (data) => {
+      onChange?.(data.phone);
+    },
   });
 
   return (
@@ -81,7 +85,7 @@ export function InputPhone({ label, error, value, onChange, id }: InputPhoneProp
             sideOffset={6}
             className="p-0 bg-transparent border-0 shadow-none"
           >
-            <GlassCard className="w-fit max-h-72 overflow-y-auto " radius={16}>
+            <GlassCard className="w-fit max-h-72 overflow-y-auto " radius={16} blur={8}>
               <ul className="py-1 w-full">
                 {defaultCountries.map((c) => {
                   const parsed = parseCountry(c);
@@ -119,6 +123,7 @@ export function InputPhone({ label, error, value, onChange, id }: InputPhoneProp
           label={label}
           id={inputId}
           ref={inputRef}
+          placeholder={placeholder}
           type="tel"
           value={inputValue}
           onChange={handlePhoneValueChange}

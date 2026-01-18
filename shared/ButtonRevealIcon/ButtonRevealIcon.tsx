@@ -1,9 +1,11 @@
+import { LoaderCircle } from "lucide-react";
 import { Button } from "@/shared/ui/button";
 import { cn } from "@/shared/utils";
 
 type ButtonRevealIconProps = React.ComponentProps<typeof Button> & {
   icon: React.ReactNode;
   shiftClassName?: string;
+  loading?: boolean;
 };
 
 export function ButtonRevealIcon({
@@ -11,17 +13,20 @@ export function ButtonRevealIcon({
   children,
   className,
   shiftClassName = "group-hover:-translate-x-3",
+  loading,
   ...props
 }: ButtonRevealIconProps) {
   return (
     <Button
       {...props}
+      disabled={loading || props.disabled}
       className={cn(
         "group relative overflow-hidden",
         "hover:bg-primary hover:text-primary-foreground hover:[--brand-border-opacity:0]",
         className,
       )}
     >
+      {loading && <LoaderCircle className="animate-spin " />}
       <span className="relative inline-flex items-center justify-center">
         <span
           className={cn(

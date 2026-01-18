@@ -140,4 +140,19 @@ export default {
       stack: "Firebase Analytics + GA4, AppMetrica, AppsFlyer",
     },
   },
+  form: {
+    name: "Ваше ім’я*",
+    phone: "Ваш номер телефону*",
+    email: "Адреса електронної пошти*",
+    details: "Деталі проєкту*",
+    send: "Надіслати",
+    recaptcha:
+      "* Цей сайт захищено reCAPTCHA та підпадає під дію Політики конфіденційності і Умов використання",
+    privacyPolicy: "Політика конфіденційності",
+    termsOfService: "Умови використання",
+    fieldRequired: "Поле обов'язкове",
+    invalidPhone: "Невірний номер",
+    titleOk: "УСПІШНО ВІДПРАВЛЕНО!",
+    textOk: "Ваш запит успішно надіслано. Ми зв’яжемося з вами найближчим часом.",
+  },
 } as const;
