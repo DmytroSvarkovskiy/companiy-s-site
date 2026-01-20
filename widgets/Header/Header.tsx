@@ -50,6 +50,7 @@ export const Header = async ({ currentTheme }: TProps) => {
 
               <div className="hidden lg:block">
                 <ContactModal
+                  title={t("contactUs").toUpperCase()}
                   trigger={
                     <ButtonRevealIcon icon={<ChevronRight />}>{t("contactUs")}</ButtonRevealIcon>
                   }

@@ -17,7 +17,8 @@ export const ContactModal = ({ title, trigger }: TProps) => {
       open={open}
       trigger={trigger}
       showClose={false}
-      contentClassName="bg-menu"
+      contentClassName="bg-menu p-6 xl:p-8 w-fit"
+      className="xl:min-w-158"
     >
       <div className="flex justify-between items-center mb-4 md:mb-5 lg:mb-8">
         <p className="font-semibold text-28 lg:text-48">{title}</p>

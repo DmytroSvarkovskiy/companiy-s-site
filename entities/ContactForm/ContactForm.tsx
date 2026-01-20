@@ -31,7 +31,7 @@ export const ContactForm = ({ formClassname }: TProps) => {
   return (
     <FormProvider {...methods}>
       <form
-        className={cn("w-full max-w-141.75 flex flex-col gap-6", formClassname)}
+        className={cn("w-full xl:w-141.75 flex flex-col gap-6", formClassname)}
         onSubmit={methods.handleSubmit(onSubmit)}
       >
         {isSuccess ? (
