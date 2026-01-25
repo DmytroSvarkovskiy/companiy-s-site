@@ -1,4 +1,4 @@
-import { Decor } from "./ui";
+import { Decor, LogoMarquee } from "./ui";
 import { Text } from "./ui/index.client";
 
 export const Hero = () => {
@@ -6,6 +6,7 @@ export const Hero = () => {
     <section className="relative overflow-hidden h-screen">
       <Decor />
       <Text />
+      <LogoMarquee />
     </section>
   );
 };

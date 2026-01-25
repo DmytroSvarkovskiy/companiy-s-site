@@ -16,9 +16,7 @@ export default {
   },
   en: "Англійська",
   uk: "Українська",
-  hero: {
-    weBuildAppWith: "Ми створюємо застосунки з",
-  },
+  weBuildAppWith: "Ми створюємо застосунки з",
 
   cookies: {
     title: "Cookies",
