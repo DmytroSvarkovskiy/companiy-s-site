@@ -85,7 +85,7 @@ export function InputPhone({ label, error, value, onChange, id, placeholder }: I
             sideOffset={6}
             className="p-0 bg-transparent border-0 shadow-none"
           >
-            <GlassCard className="w-fit max-h-72 overflow-y-auto " radius={16} blur={8}>
+            <GlassCard className="w-fit max-h-72 overflow-y-auto" radius={16} blur={8}>
               <ul className="py-1 w-full">
                 {defaultCountries.map((c) => {
                   const parsed = parseCountry(c);

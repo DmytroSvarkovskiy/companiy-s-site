@@ -55,6 +55,9 @@ export function GlassCard({
       className="bg-transparent! shadow-none!"
     >
       <div
+        onWheelCapture={(e) => e.stopPropagation()}
+        onTouchMoveCapture={(e) => e.stopPropagation()}
+        onTouchStartCapture={(e) => e.stopPropagation()}
         className={cn(
           "glass-card h-full w-full rounded-[inherit]",
           hoverGradient && "glass-card--hoverGradient",

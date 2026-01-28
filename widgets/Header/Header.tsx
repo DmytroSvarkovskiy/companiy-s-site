@@ -16,7 +16,7 @@ export const Header = async ({ currentTheme }: TProps) => {
   return (
     <header className="sticky top-4 z-50 md:top-6 xl:top-8 2xl:top-10">
       <div className="container">
-        <GlassCard radius={999} blur={5}>
+        <GlassCard radius={999} blur={3}>
           <div
             className="
         p-4 md:p-4.5 2xl:p-5.5
