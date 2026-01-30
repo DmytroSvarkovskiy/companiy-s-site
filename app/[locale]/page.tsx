@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { COOKIES_KEYS } from "@/shared/consts";
-import { Hero } from "@/widgets";
+import { ApproachBlock, Hero, PartnersTrustBlock, Showcases } from "@/widgets";
 
 export default async function Home() {
   const cookiesData = await cookies();
@@ -8,6 +8,9 @@ export default async function Home() {
   return (
     <>
       <Hero cookiesValue={cookiesValue} />
+      <PartnersTrustBlock />
+      <ApproachBlock />
+      <Showcases />
     </>
   );
 }

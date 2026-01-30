@@ -6,11 +6,11 @@ type TProps = { cookiesValue?: string };
 
 export const Hero = ({ cookiesValue }: TProps) => {
   return (
-    <section className="relative overflow-hidden h-screen">
+    <section className="relative overflow-hidden h-fit">
       <Decor />
       <Text />
       <LogoMarquee />
-      <div className="container relative"> {!cookiesValue && <CookiesBlock />}</div>
+      {!cookiesValue && <CookiesBlock />}
     </section>
   );
 };

@@ -168,6 +168,8 @@
   --text-18--line-height: 1.625rem; /* 26px */
   --text-20: 1.25rem; /* 20px */
   --text-20--line-height: 1.75rem; /* 28px */
+  --text-24: 1.5rem; /* 24px */
+  --text-24--line-height: 2rem; /* 32px */
   --text-28: 1.75rem; /* 28px */
   --text-28--line-height: 2.25rem; /* 36px */
   --text-32: 2rem; /* 32px */
@@ -384,51 +386,58 @@
 
 @layer utilities {
   .container {
-    @apply w-full  max-w-480 3xl:mx-auto  px-3 md:px-3.5 xl:px-4;
+    @apply w-full  max-w-480 3xl:mx-auto  px-3 md:px-3.5 xl:px-6 2xl:px-16 3xl:px-20;
   }
 
   .section {
-    @apply py-20 md:py-30 xl:py-41;
+    @apply pt-20 md:pt-30 xl:pt-34 2xl:pt-41;
+  }
+  .marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .marquee__track {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-shrink: 0;
+    width: max-content;
+
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+
+    animation: marqueeMove 40s linear infinite;
+  }
+
+  @keyframes marqueeMove {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .logo-filter {
+    filter: grayscale(1) brightness(0.5) contrast(1.15);
+    opacity: 0.7;
+  }
+
+  .dark .logo-filter {
+    filter: grayscale(1) brightness(1.25) contrast(1.05);
+    opacity: 0.9;
   }
 }
-.marquee {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-}
-
-.marquee__track {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  padding: 10px 0;
-  flex-shrink: 0;
-  min-width: 100%;
-
-  animation: marqueeMove 20s linear infinite;
-}
-
-.marquee__item {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes marqueeMove {
-  from {
-    transform: translateX(0);
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  to {
-    transform: translateX(-100%);
+  .scrollbar-none::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
   }
-}
-.logo-filter {
-  filter: grayscale(1) brightness(0.5) contrast(1.15);
-  opacity: 0.7;
-}
-
-.dark .logo-filter {
-  filter: grayscale(1) brightness(1.25) contrast(1.05);
-  opacity: 0.9;
 }

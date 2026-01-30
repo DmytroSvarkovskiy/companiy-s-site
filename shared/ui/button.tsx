@@ -11,7 +11,7 @@ const buttonVariants = cva(
         default:
           "btn-brand bg-primary text-primary-foreground hover:bg-primary/10 hover:text-header-fg",
 
-        hovered: "btn-brand btn-brand--on bg-primary/10 text-header-fg hover:brightness-80",
+        hovered: "btn-brand btn-brand--on bg-primary/10 text-title hover:brightness-80",
 
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",

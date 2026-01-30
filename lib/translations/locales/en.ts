@@ -57,17 +57,20 @@ export default {
       title: "Product Development",
       text: "We deliver front-end and back-end development and create admin panels (dashboards). We keep the client informed at every stage and provide the ability to control and track progress. Each stage is thoroughly tested before release. The final product is launched on Google Play / App Store and hosting. We also provide technical support.",
     },
+    scheduleCall: "Schedule a Call",
   },
 
   showcases: {
     title: "Showcases",
     subtitle:
-      "All of our projects are created taking into account all modern trends and methodologies. All solutions are fully discussed with the client to achieve the best result.",
+      "All of our projects are created taking into account all modern trends and methodologies.Also, all solutions are fully discussed with the client to achieve the best result.",
     filters: {
       all: "All",
       mobileApp: "Mobile app",
       landing: "Landing",
       webApp: "Web app",
+      fitTeach: "Fintech and mobile wallets",
+      medicalPlatform: "Medical and educational platforms",
     },
   },
 

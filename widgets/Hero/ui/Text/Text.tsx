@@ -27,7 +27,7 @@ export const Text = () => {
           className="hidden md:block md:h-55 xl:h-80 2xl:h-95 2xl:w-80 3xl:w-90"
         />
         <div className="flex flex-col font-semibold text-48 xl:text-64 2xl:text-90 xl:max-w-180 xl:pt-22 uppercase 2xl:max-w-190 2xl:pt-32 3xl:max-w-190 2xl:leading-[1.05] ">
-          <p className=" ">{t("weBuildAppWith")}</p>
+          <h1 className=" ">{t("weBuildAppWith")}</h1>
           <div className="text-primary ">
             <Typewriter
               words={words}
@@ -42,7 +42,7 @@ export const Text = () => {
       </div>
       <ContactModal
         trigger={
-          <div className="container flex md:justify-center mt-8 md:mt-12 lg:hidden">
+          <div className="container flex pb-4  md:justify-center mt-8 md:mt-12 lg:hidden">
             <Button className="w-full md:w-90 " type="button">
               {t("approach.contact.title")}
             </Button>
