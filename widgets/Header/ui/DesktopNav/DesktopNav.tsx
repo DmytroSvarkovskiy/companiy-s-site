@@ -49,14 +49,7 @@ export function DesktopNav() {
               sideOffset={10}
               className="bg-transparent border-0 p-0 shadow-none w-fit mt-5 md:mt-7 xl:mt-8"
             >
-              <GlassCard
-                radius={16}
-                className="w-45 overflow-hidden"
-                contentClassName="py-3 overflow-hidden"
-                blur={3}
-                displacementScale={2}
-                elasticity={0.5}
-              >
+              <div className="py-3 w-45 overflow-hidden border border-border rounded-lg bg-phone-btn/95">
                 <ul className="space-y-1">
                   {item.children.map((child) => (
                     <li key={child.key}>
@@ -69,7 +62,7 @@ export function DesktopNav() {
                     </li>
                   ))}
                 </ul>
-              </GlassCard>
+              </div>
             </HoverCardContent>
           </HoverCard>
         );

@@ -25,16 +25,12 @@ export const CookiesBlock = () => {
   if (hidden) return null;
 
   return (
-    <div className="w-full max-w-110 md:max-w-none h-fit md:w-110 md:h-85 xl:w-120 xl:h-fit absolute bottom-5 xl:bottom-10 z-1 px-3 md:px-3.5 xl:px-4">
+    <div className="w-full max-w-110 md:max-w-none h-fit md:w-110 md:h-85  xl:w-120 xl:h-fit absolute bottom-5 md:bottom-36 lg:-bottom-0.5 xl:bottom-10 z-1  left-3 md:left-3.5 xl:left-6 2xl:left-16 3xl:left-20">
       <GlassCard
         className="p-5 md:p-6 xl:p-10"
-        blur={2}
-        displacementScale={0.28}
-        elasticity={0.55}
-        contrast={1.12}
-        brightness={1.03}
-        saturation={1.08}
-        shadowIntensity={0.12}
+        blur={0.4}
+        distortion={0.2}
+        // profile="default"
       >
         <div className="w-full h-full bg-menu rounded-lg p-4 xl:p-6">
           <Image
@@ -42,7 +38,7 @@ export const CookiesBlock = () => {
             width={64}
             height={64}
             alt="cookies"
-            className="hidden md:block mb-4"
+            className="hidden md:block mb-4 "
           />
           <p className="text-header-fg text-24 xl:text-32 mb-3 xl:mb-4">{t("title")}</p>
           <span className="text-14 md:text-16 mb-3 xl:mb-4 block ">

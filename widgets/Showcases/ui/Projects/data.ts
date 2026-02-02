@@ -37,7 +37,7 @@ export const data = [
     overview:
       "The Maystry mobile application has been successfully launched in marketplaces and has become a convenient tool for job seekers and employers posting jobs. The app allows candidates to easily find job opportunities, apply with a few clicks, and receive personalized recommendations based on their skills and experience. At the same time, employers can efficiently create jobs, review applications, and connect with potential employees via integrated chat. Maystry streamlines the job search and hiring process, simplifies communication between parties, and ensures transparency at all stages of employment. This project has become an important contribution to Kit Global’s portfolio and is an example of a successful implementation of a mobile application with intuitive and convenient functionality. Maystry is now an important part of the client’s ecosystem, helping to automate employment processes, improve interaction between employers and candidates, and ensure a high level of user satisfaction.",
     icon: "/showcases/masterIcon.svg",
-    image: "/public/showcases/masterIconImage.png",
+    image: "/showcases/masterIconImage.png",
   },
 ];
 

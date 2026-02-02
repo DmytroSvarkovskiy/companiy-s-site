@@ -51,9 +51,13 @@ export const ApproachBlock = async () => {
               )}
             >
               <GlassCard
+                blur={0.5}
+                distortion={0.1}
+                profile="default"
+                frequency="0.004"
                 className={cn(
                   "h-full p-6 hover:border-primary transition-colors duration-200 border flex flex-col gap-3 lg:gap-4 xl:p-10",
-                  item.render && "bg-primary/10",
+                  item.render && "bg-primary/10!",
                 )}
               >
                 <p className="font-medium text-24 lg:text-32 text-header-fg mb-3 lg:mb-4 2xl:mb-6">
@@ -77,7 +81,7 @@ export const ApproachBlock = async () => {
         height={179}
         alt="decor"
         src={"/images/approach.png"}
-        className="absolute bottom-110 right-0 w-40 xl:w-60 xl:-bottom-40"
+        className="absolute  bottom-110 -z-1 right-0 w-40 xl:w-60 xl:-bottom-40"
       />
     </div>
   );

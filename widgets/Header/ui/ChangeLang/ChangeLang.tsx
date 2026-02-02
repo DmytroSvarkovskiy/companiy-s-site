@@ -3,7 +3,6 @@
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import { GlassCard } from "@/entities";
 import { useChangeLocale, useCurrentLocale, useI18n } from "@/lib/index.client";
 import { LOCALES, type TLang } from "@/shared/consts";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/index.client";
@@ -38,14 +37,7 @@ export const ChangeLang = () => {
         sideOffset={10}
         className="bg-transparent border-0 p-0 shadow-none w-fit mt-5 md:mt-7 xl:mt-8"
       >
-        <GlassCard
-          radius={16}
-          className="w-38 overflow-hidden"
-          contentClassName="py-3 overflow-hidden"
-          blur={3}
-          displacementScale={2}
-          elasticity={0.5}
-        >
+        <div className="py-3 w-38 overflow-hidden border border-border rounded-lg bg-phone-btn/95">
           <ul className="space-y-1 py-2 px-3 flex flex-col gap-3 font-medium">
             {locales.map((item) => (
               <li key={item.label}>
@@ -65,7 +57,7 @@ export const ChangeLang = () => {
               </li>
             ))}
           </ul>
-        </GlassCard>
+        </div>
       </HoverCardContent>
     </HoverCard>
   );
