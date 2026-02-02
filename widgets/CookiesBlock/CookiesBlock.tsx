@@ -25,13 +25,14 @@ export const CookiesBlock = () => {
   if (hidden) return null;
 
   return (
-    <div className="w-full max-w-110 md:max-w-none h-fit md:w-110 md:h-85  xl:w-120 xl:h-fit absolute bottom-5 md:bottom-36 lg:-bottom-0.5 xl:bottom-10 z-1  left-3 md:left-3.5 xl:left-6 2xl:left-16 3xl:left-20">
-      <GlassCard
-        className="p-5 md:p-6 xl:p-10"
-        blur={0.4}
-        distortion={0.2}
-        // profile="default"
-      >
+    <div
+      className="absolute z-1 h-fit
+    bottom-5 md:bottom-36 lg:-bottom-0.5 xl:bottom-10
+    left-3 md:left-3.5 xl:left-6 2xl:left-16 3xl:left-20
+    right-3 md:right-auto
+    max-w-110 md:w-110 md:h-85 xl:w-120 xl:h-fit"
+    >
+      <GlassCard className="p-5 md:p-6 xl:p-10" blur={0.4} distortion={0.2}>
         <div className="w-full h-full bg-menu rounded-lg p-4 xl:p-6">
           <Image
             src={"/Icons/cookies.svg"}
