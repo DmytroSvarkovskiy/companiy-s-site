@@ -10,7 +10,7 @@ type TitleSectionProps = {
 };
 
 export const TitleSection = ({ title, className, subtitle, animate = true }: TitleSectionProps) => {
-  const { ref, inView } = useInViewOnce<HTMLHeadingElement>(
+  const { ref, inView } = useInViewOnce(
     animate ? { threshold: 0.5, rootMargin: "0px 0px 5% 0px" } : { threshold: 0 },
   );
 

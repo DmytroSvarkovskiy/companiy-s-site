@@ -4,6 +4,7 @@ import { TitleSection } from "@/entities/index.client";
 import { getScopedI18n } from "@/lib";
 import { Button } from "@/shared";
 import { NAV_HASH } from "@/shared/consts";
+import { Reveal } from "@/shared/Reveal/Reveal";
 import { cn } from "@/shared/utils";
 import { ContactModal } from "../index.client";
 
@@ -42,37 +43,41 @@ export const ApproachBlock = async () => {
         <TitleSection title={t("title")} />
         <ul className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-[1fr_1fr_320px] 3xl:grid-cols-[1fr_1fr_420px] xl:items-start">
           {dataBlock.map((item) => (
-            <li
-              key={item.id}
-              className={cn(
-                "h-full",
-                item.render &&
-                  "md:col-span-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:row-span-2",
-              )}
-            >
-              <GlassCard
-                blur={0.5}
-                distortion={0.1}
-                profile="default"
-                frequency="0.004"
+            <Reveal key={item.id} preset="flipPop" asChild>
+              <li
                 className={cn(
-                  "h-full p-6 hover:border-primary transition-colors duration-200 border flex flex-col gap-3 lg:gap-4 xl:p-10",
-                  item.render && "bg-primary/10!",
+                  "h-full",
+                  item.render &&
+                    "md:col-span-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:row-span-2",
                 )}
               >
-                <p className="font-medium text-24 lg:text-32 text-header-fg mb-3 lg:mb-4 2xl:mb-6">
-                  {item.title}
-                </p>
-
-                <p
-                  className={cn("text-16 lg:text-20 text-menu-foreground", item.render && "mb-12")}
+                <GlassCard
+                  blur={0.5}
+                  distortion={0.1}
+                  profile="default"
+                  frequency="0.004"
+                  className={cn(
+                    "h-full p-6 hover:border-primary transition-colors duration-200 border flex flex-col gap-3 lg:gap-4 xl:p-10",
+                    item.render && "bg-primary/10!",
+                  )}
                 >
-                  {item.text}
-                </p>
+                  <p className="font-medium text-24 lg:text-32 text-header-fg mb-3 lg:mb-4 2xl:mb-6">
+                    {item.title}
+                  </p>
 
-                {item.render ? <div className="flex justify-center">{item.render}</div> : null}
-              </GlassCard>
-            </li>
+                  <p
+                    className={cn(
+                      "text-16 lg:text-20 text-menu-foreground",
+                      item.render && "mb-12",
+                    )}
+                  >
+                    {item.text}
+                  </p>
+
+                  {item.render ? <div className="flex justify-center">{item.render}</div> : null}
+                </GlassCard>
+              </li>
+            </Reveal>
           ))}
         </ul>
       </section>

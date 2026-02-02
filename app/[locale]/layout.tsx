@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { getCurrentLocale } from "@/lib";
 import { I18nProviderClient } from "@/lib/index.client";
 import { COOKIES_KEYS } from "@/shared/consts";
+import { cn } from "@/shared/utils";
 import { Footer, Header } from "@/widgets";
 
 export const ibmPlexSans = IBM_Plex_Sans({
@@ -36,7 +37,7 @@ export default async function RootLayout({
   const theme = cookieStore.get(COOKIES_KEYS.theme)?.value ?? "dark";
 
   return (
-    <html lang={locale} className={theme}>
+    <html lang={locale} className={cn(theme, "scroll-smooth")}>
       <body className={`${ibmPlexSans.className} antialiased flex flex-col`}>
         <I18nProviderClient locale={locale}>
           <Header currentTheme={theme as "light" | "dark"} />
