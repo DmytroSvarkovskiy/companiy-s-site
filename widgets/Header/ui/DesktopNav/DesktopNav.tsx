@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { GlassCard } from "@/entities";
 import { useScopedI18n } from "@/lib/index.client";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/index.client";
 import { cn } from "@/shared/utils";
