@@ -7,13 +7,13 @@ import { cn } from "@/shared/utils";
 type GlassCardProps = {
   as?: React.ElementType;
 
-  className?: string; // класи на “скляну” карту (padding, flex, etc)
+  className?: string;
   children?: React.ReactNode;
 
   radius?: number;
 
-  blur?: number; // 0..3 (умовно)
-  distortion?: number; // 0..1 (умовно)
+  blur?: number;
+  distortion?: number;
 
   hoverGradient?: boolean;
 
@@ -69,7 +69,7 @@ export function GlassCard({
   return (
     <CreativomaLiquidGlass
       as={as}
-      tintColor="transparent"
+      tintColor="var(--glass-bg)"
       backdropBlur={backdropBlurPx}
       displacementScale={displacementScale}
       turbulenceBaseFrequency={turbulenceBaseFrequency}
@@ -77,8 +77,8 @@ export function GlassCard({
       style={style}
       className={cn(
         "block w-full bg-transparent shadow-none! rounded-[inherit]",
-        "glass-card overflow-hidden",
-        hoverGradient && "glass-card--hoverGradient",
+        "glass-card-simple overflow-hidden",
+        hoverGradient && "glass-card-simple--hoverGradient",
         className,
       )}
       {...stopHandlers}

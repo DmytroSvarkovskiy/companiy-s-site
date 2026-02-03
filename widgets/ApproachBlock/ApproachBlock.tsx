@@ -45,19 +45,20 @@ export const ApproachBlock = async () => {
           {dataBlock.map((item) => (
             <Reveal key={item.id} preset="flipPop" asChild>
               <li
+                key={item.id}
                 className={cn(
-                  "h-full",
+                  "h-full hover:border-primary! transition-colors duration-200 border border-transparent rounded-2xl",
                   item.render &&
                     "md:col-span-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:row-span-2",
                 )}
               >
                 <GlassCard
                   blur={0.5}
-                  distortion={0.1}
-                  profile="default"
-                  frequency="0.004"
+                  distortion={0.2}
+                  profile="strong"
+                  seed={9}
                   className={cn(
-                    "h-full p-6 hover:border-primary transition-colors duration-200 border flex flex-col gap-3 lg:gap-4 xl:p-10",
+                    "h-full p-6  flex flex-col gap-3 lg:gap-4 xl:p-10",
                     item.render && "bg-primary/10!",
                   )}
                 >

@@ -85,8 +85,8 @@ export function InputPhone({ label, error, value, onChange, id, placeholder }: I
             sideOffset={6}
             className="p-0 bg-transparent border-0 shadow-none"
           >
-            <GlassCard className="w-fit max-h-72 overflow-y-auto" radius={16} blur={8}>
-              <ul className="py-1 w-full">
+            <GlassCard className="w-70 max-h-72 " radius={16} blur={8} stopScrollPropagation>
+              <ul className="py-1 w-full overflow-x-hidden overflow-y-auto h-70">
                 {defaultCountries.map((c) => {
                   const parsed = parseCountry(c);
                   const active = parsed.iso2 === country.iso2;
