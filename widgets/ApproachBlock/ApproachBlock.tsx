@@ -43,42 +43,44 @@ export const ApproachBlock = async () => {
         <TitleSection title={t("title")} />
         <ul className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-[1fr_1fr_320px] 3xl:grid-cols-[1fr_1fr_420px] xl:items-start">
           {dataBlock.map((item) => (
-            <Reveal key={item.id} preset="flipPop" asChild>
-              <li
-                key={item.id}
+            <li
+              key={item.id}
+              className={cn(
+                "h-full hover:border-primary! transition-colors duration-200 border border-transparent rounded-2xl",
+                item.render &&
+                  "md:col-span-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:row-span-2",
+              )}
+            >
+              <GlassCard
+                blur={0.5}
+                distortion={0.2}
+                profile="strong"
+                seed={9}
                 className={cn(
-                  "h-full hover:border-primary! transition-colors duration-200 border border-transparent rounded-2xl",
-                  item.render &&
-                    "md:col-span-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:row-span-2",
+                  "h-full p-6 flex flex-col gap-3 lg:gap-4 xl:p-10",
+                  item.render && "bg-primary/10!",
                 )}
               >
-                <GlassCard
-                  blur={0.5}
-                  distortion={0.2}
-                  profile="strong"
-                  seed={9}
-                  className={cn(
-                    "h-full p-6  flex flex-col gap-3 lg:gap-4 xl:p-10",
-                    item.render && "bg-primary/10!",
-                  )}
-                >
-                  <p className="font-medium text-24 lg:text-32 text-header-fg mb-3 lg:mb-4 2xl:mb-6">
-                    {item.title}
-                  </p>
+                <Reveal preset="flipPop" asChild className="h-full">
+                  <div className="h-full">
+                    <p className="font-medium text-24 lg:text-32 text-header-fg mb-3 lg:mb-4 2xl:mb-6">
+                      {item.title}
+                    </p>
 
-                  <p
-                    className={cn(
-                      "text-16 lg:text-20 text-menu-foreground",
-                      item.render && "mb-12",
-                    )}
-                  >
-                    {item.text}
-                  </p>
+                    <p
+                      className={cn(
+                        "text-16 lg:text-20 text-menu-foreground",
+                        item.render && "mb-12",
+                      )}
+                    >
+                      {item.text}
+                    </p>
 
-                  {item.render ? <div className="flex justify-center">{item.render}</div> : null}
-                </GlassCard>
-              </li>
-            </Reveal>
+                    {item.render ? <div className="flex justify-center">{item.render}</div> : null}
+                  </div>
+                </Reveal>
+              </GlassCard>
+            </li>
           ))}
         </ul>
       </section>

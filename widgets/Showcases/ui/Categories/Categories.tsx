@@ -20,7 +20,7 @@ export const Categories = () => {
   ];
 
   return (
-    <div className="relative w-full my-8 lg:my-12 pl-3 md:pl-3.5 xl:pl-6 2xl:pl-16 3xl:pl-20">
+    <div className="relative w-full my-8 lg:my-12 container">
       <div className="pointer-events-none absolute inset-y-0 left-0 w-10 md:w-14 bg-linear-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-10 md:w-14 bg-linear-to-l from-background to-transparent" />
 
@@ -29,7 +29,7 @@ export const Categories = () => {
           "flex gap-5 overflow-x-auto",
           "snap-x snap-mandatory",
           "scrollbar-none [-webkit-overflow-scrolling:touch]",
-          "px-3 md:px-3.5 xl:px-6 2xl:px-16 3xl:px-0",
+          "px-3 md:px-3.5 xl:px-6 2xl:px-16 3xl:px-20",
           "pb-1",
         )}
       >

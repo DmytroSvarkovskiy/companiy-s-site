@@ -27,7 +27,9 @@ export const PartnersTrustBlock = async () => {
                 frequency="0.003"
                 seed={5}
               >
-                {item.title}
+                <Reveal preset="zoomSoft" asChild={false} rootMargin="0px 0px -20% 0px">
+                  {item.title}
+                </Reveal>
               </GlassCard>
             </li>
           ))}

@@ -39,6 +39,6 @@ export const data = [
     icon: "/showcases/masterIcon.svg",
     image: "/showcases/masterIconImage.png",
   },
-];
+] as const;
 
 export type TProject = (typeof data)[number];
