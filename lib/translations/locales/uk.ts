@@ -71,6 +71,9 @@ export default {
       fitTeach: "Фінтех та мобільні гаманці",
       medicalPlatform: "Медичні та освітні платформи",
     },
+    terms: "Терміни розробки",
+    development: "Розробка",
+    overView: "Огляд та результати проєкту",
   },
 
   industries: {

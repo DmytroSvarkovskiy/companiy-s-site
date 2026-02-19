@@ -2,12 +2,20 @@
 
 import { X } from "lucide-react";
 import Image from "next/image";
-import { GlassCard } from "@/entities";
+import { useScopedI18n } from "@/lib/index.client";
 import { Button } from "@/shared";
 import type { TProject } from "../../data";
 
 type TProps = { project: TProject; closeModal: () => void };
 export const ContentCard = ({ closeModal, project }: TProps) => {
+  const t = useScopedI18n("showcases");
+
+  const blocks = [
+    { title: t("development"), text: project.development },
+    { title: t("terms"), text: project.terms },
+    { title: t("overView"), text: project.overview },
+  ];
+
   return (
     <div className="w-full p-4 md:p-6 xl:p-10">
       <div className="flex justify-between items-center gap-2">
@@ -36,15 +44,23 @@ export const ContentCard = ({ closeModal, project }: TProps) => {
           <X className="md:size-6" />
         </Button>
       </div>
-      <div className="flex flex-col gap-6 mt-6">
-        {" "}
+      <div className="flex flex-col gap-6 md:gap-4 mt-6 md:flex-row-reverse md:items-start">
         <Image
           src={project.image}
           alt="project-image"
-          width={1200}
-          height={800}
-          className="w-full  mt-6 lg:mt-10 "
+          width={560}
+          height={500}
+          sizes="(min-width: 768px) 400px,(min-width: 1200px) 520px, 100vw"
+          className=" h-auto shrink-0 object-contain"
         />
+        <div className="flex flex-col gap-4">
+          {blocks?.map((el) => (
+            <span key={el.title} className="text-16  flex flex-col gap-2">
+              <p className="text-header-fg font-semibold">{el.title}</p>
+              <p className="text-menu-foreground">{el.text}</p>
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

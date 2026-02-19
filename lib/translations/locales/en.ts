@@ -72,6 +72,9 @@ export default {
       fitTeach: "Fintech and mobile wallets",
       medicalPlatform: "Medical and educational platforms",
     },
+    terms: "Development terms",
+    development: "Development",
+    overView: "Project overview and results",
   },
 
   industries: {

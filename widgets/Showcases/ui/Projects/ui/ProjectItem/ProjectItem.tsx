@@ -16,7 +16,7 @@ export const ProjectItem = ({ project }: TProps) => {
       onOpenChange={setOpen}
       key={project.title}
       showClose={false}
-      className="md:min-w-180 xl:min-w-272 border-transparent rounded-2xl"
+      className="md:min-w-180 xl:min-w-272 border-transparent rounded-2xl bg-menu"
       contentClassName="p-0 border-none"
       trigger={
         <div className="md:pointer-events-none w-full h-full block">
