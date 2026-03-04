@@ -2,13 +2,10 @@
 import { Star } from "lucide-react";
 import Image from "next/image";
 import { GlassCard } from "@/entities";
-import { useScopedI18n } from "@/lib/index.client";
 import { Reveal } from "@/shared/Reveal/Reveal";
 import { useProjectsData } from "./data";
 
 export const ProductsList = () => {
-  const t = useScopedI18n("productsSection");
-
   const products = useProjectsData();
 
   return (

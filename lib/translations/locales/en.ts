@@ -115,7 +115,7 @@ export default {
     design: {
       title: "Design",
       text: "One global solution for Android and iOS app development. Build on a modern framework — save time and money.",
-      details: "UX research, wireframing, user flow prototype, UI styling",
+      stack: "UX research, wireframing, user flow prototype, UI styling",
     },
     crossPlatform: {
       title: "Cross-platform Apps",
