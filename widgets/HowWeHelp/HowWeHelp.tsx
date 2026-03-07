@@ -65,15 +65,7 @@ export const HowWeHelp = async () => {
 
         <div className="flex flex-col gap-4 xl:gap-6">
           {list.map((item) => (
-            <GlassCard
-              className="p-6"
-              key={item.src}
-              distortion={0.8}
-              profile="default"
-              frequency="0.0001"
-              seed={5}
-              blur={0.6}
-            >
+            <GlassCard className="p-6" key={item.src} blur={9}>
               <div className="flex flex-col gap-4 2xl:gap-6">
                 <Image alt="icon" src={item.src} width={64} height={64} className="w-12 xl:w-16" />
                 <p className="font-medium text-24 xl:text-28 2xl:text-32">{item.label}</p>

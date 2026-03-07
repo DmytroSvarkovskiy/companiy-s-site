@@ -2,14 +2,13 @@
 
 import { LiquidGlass as CreativomaLiquidGlass } from "@creativoma/liquid-glass";
 import * as React from "react";
+import { useMediaQuery } from "@/shared/hooks";
 import { cn } from "@/shared/utils";
 
 type GlassCardProps = {
   as?: React.ElementType;
-
   className?: string;
   children?: React.ReactNode;
-
   radius?: number;
 
   blur?: number;
@@ -22,6 +21,8 @@ type GlassCardProps = {
   seed?: number;
 
   stopScrollPropagation?: boolean;
+
+  desktopFrom?: number;
 };
 
 const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
@@ -38,24 +39,9 @@ export function GlassCard({
   frequency,
   seed,
   stopScrollPropagation = false,
+  desktopFrom = 1200,
 }: GlassCardProps) {
-  const backdropBlurPx = React.useMemo(() => clamp(Math.round(blur * 6), 0, 14), [blur]);
-
-  const displacementScale = React.useMemo(
-    () => clamp(Math.round(distortion * 260), 0, 220),
-    [distortion],
-  );
-
-  const preset = React.useMemo(() => {
-    if (profile === "soft") return { f: "0.0025 0.0025", s: 2 };
-    if (profile === "strong") return { f: "0.006 0.006", s: 3 };
-    return { f: "0.0035 0.0035", s: 2 };
-  }, [profile]);
-
-  const turbulenceBaseFrequency = frequency ?? preset.f;
-  const turbulenceSeed = seed ?? preset.s;
-
-  const style = React.useMemo(() => ({ borderRadius: radius }), [radius]);
+  const isDesktopGlass = useMediaQuery(`(min-width: ${desktopFrom}px)`);
 
   const stopHandlers = React.useMemo(() => {
     if (!stopScrollPropagation) return undefined;
@@ -66,15 +52,52 @@ export function GlassCard({
     };
   }, [stopScrollPropagation]);
 
+  if (!isDesktopGlass) {
+    const backdropBlurPx = clamp(Math.round(blur * 6), 4, 12);
+
+    const Comp = as as React.ElementType;
+
+    return (
+      <Comp
+        style={{
+          borderRadius: radius,
+          backdropFilter: `blur(${backdropBlurPx}px)`,
+          WebkitBackdropFilter: `blur(${backdropBlurPx}px)`,
+        }}
+        className={cn(
+          "block w-full rounded-[inherit] bg-transparent",
+          "glass-card-simple",
+          hoverGradient && "glass-card-simple--hoverGradient",
+          className,
+        )}
+        {...stopHandlers}
+      >
+        {children}
+      </Comp>
+    );
+  }
+
+  const displacementScale = clamp(Math.round(distortion * 260), 0, 220);
+
+  const preset = (() => {
+    if (profile === "soft") return { f: "0.0025 0.0025", s: 2 };
+    if (profile === "strong") return { f: "0.006 0.006", s: 3 };
+    return { f: "0.0035 0.0035", s: 2 };
+  })();
+
+  const turbulenceBaseFrequency = frequency ?? preset.f;
+  const turbulenceSeed = seed ?? preset.s;
+  const backdropBlurPx = clamp(Math.round(blur * 6), 0, 14);
+
   return (
     <CreativomaLiquidGlass
       as={as}
-      tintColor="var(--glass-bg)"
+      tintColor="transparent"
       backdropBlur={backdropBlurPx}
       displacementScale={displacementScale}
       turbulenceBaseFrequency={turbulenceBaseFrequency}
       turbulenceSeed={turbulenceSeed}
-      style={style}
+      style={{ borderRadius: radius }}
       className={cn(
         "block w-full bg-transparent shadow-none! rounded-[inherit]",
         "glass-card-simple overflow-hidden",
