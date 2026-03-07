@@ -159,4 +159,46 @@ export default {
     titleOk: "SEND SUCCESS!",
     textOk: "Your request has been successfully submitted and we will contact you shortly.",
   },
+  technicalStack: {
+    title: "Technical Stack",
+    description:
+      "We provide custom software development services using the following proven technologies.",
+
+    sections: {
+      development: {
+        number: "01",
+        title: "Development",
+        items: {
+          reactNative: "React Native",
+          dart: "Dart",
+          flutter: "Flutter",
+          typescript: "TypeScript",
+          reactJs: "React JS",
+          nodeJs: "Node.js",
+        },
+      },
+      databases: {
+        number: "02",
+        title: "Databases",
+        items: {
+          redis: "Redis",
+          postgresql: "PostgreSQL",
+          mongodb: "MongoDB",
+          mysql: "MySQL",
+        },
+      },
+      infrastructure: {
+        number: "03",
+        title: "Infrastructure",
+        items: {
+          aws: "AWS",
+          webrtc: "WebRTC",
+          heroku: "Heroku",
+          pwa: "PWA",
+          nginx: "Nginx",
+          jenkins: "Jenkins",
+        },
+      },
+    },
+  },
 } as const;

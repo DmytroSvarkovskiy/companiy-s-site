@@ -159,4 +159,46 @@ export default {
     titleOk: "УСПІШНО ВІДПРАВЛЕНО!",
     textOk: "Ваш запит успішно надіслано. Ми зв’яжемося з вами найближчим часом.",
   },
+  technicalStack: {
+    title: "Технічний стек",
+    description:
+      "Ми надаємо послуги кастомної розробки програмного забезпечення, використовуючи перевірені технології.",
+
+    sections: {
+      development: {
+        number: "01",
+        title: "Розробка",
+        items: {
+          reactNative: "React Native",
+          dart: "Dart",
+          flutter: "Flutter",
+          typescript: "TypeScript",
+          reactJs: "React JS",
+          nodeJs: "Node.js",
+        },
+      },
+      databases: {
+        number: "02",
+        title: "Бази даних",
+        items: {
+          redis: "Redis",
+          postgresql: "PostgreSQL",
+          mongodb: "MongoDB",
+          mysql: "MySQL",
+        },
+      },
+      infrastructure: {
+        number: "03",
+        title: "Інфраструктура",
+        items: {
+          aws: "AWS",
+          webrtc: "WebRTC",
+          heroku: "Heroku",
+          pwa: "PWA",
+          nginx: "Nginx",
+          jenkins: "Jenkins",
+        },
+      },
+    },
+  },
 } as const;

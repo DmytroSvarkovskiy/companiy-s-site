@@ -6,3 +6,4 @@ export * from "./HowWeHelp/HowWeHelp";
 export * from "./OurProducts/OurProducts";
 export * from "./PartnersTrustBlock/PartnersTrustBlock";
 export * from "./Showcases/Showcases";
+export * from "./TechnicalStack/TechnicalStack";

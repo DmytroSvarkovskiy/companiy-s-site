@@ -7,6 +7,7 @@ import {
   OurProducts,
   PartnersTrustBlock,
   Showcases,
+  TechnicalStack,
 } from "@/widgets";
 
 export default async function Home() {
@@ -20,6 +21,7 @@ export default async function Home() {
       <Showcases />
       <OurProducts />
       <HowWeHelp />
+      <TechnicalStack />
     </>
   );
 }
