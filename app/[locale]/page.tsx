@@ -4,6 +4,7 @@ import {
   ApproachBlock,
   Hero,
   HowWeHelp,
+  ImplementsIdea,
   OurProducts,
   PartnersTrustBlock,
   Showcases,
@@ -22,6 +23,7 @@ export default async function Home() {
       <OurProducts />
       <HowWeHelp />
       <TechnicalStack />
+      <ImplementsIdea />
     </>
   );
 }

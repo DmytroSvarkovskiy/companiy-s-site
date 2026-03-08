@@ -1,4 +1,6 @@
 export default {
+  timeToImplement: "Час втілювати\nідеї разом",
+  getInTouch: "Зв'яжіться з нами",
   nav: {
     showcases: "Кейси",
     ourProducts: "Наші продукти",

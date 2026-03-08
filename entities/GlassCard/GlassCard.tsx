@@ -65,7 +65,7 @@ export function GlassCard({
           WebkitBackdropFilter: `blur(${backdropBlurPx}px)`,
         }}
         className={cn(
-          "block w-full rounded-[inherit] bg-transparent",
+          "block w-full rounded-[inherit] bg-glassBg",
           "glass-card-simple",
           hoverGradient && "glass-card-simple--hoverGradient",
           className,
@@ -92,7 +92,7 @@ export function GlassCard({
   return (
     <CreativomaLiquidGlass
       as={as}
-      tintColor="transparent"
+      tintColor="var(--glass-bg)"
       backdropBlur={backdropBlurPx}
       displacementScale={displacementScale}
       turbulenceBaseFrequency={turbulenceBaseFrequency}

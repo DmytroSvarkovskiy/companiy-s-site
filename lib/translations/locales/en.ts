@@ -1,4 +1,6 @@
 export default {
+  timeToImplement: "Time to implement\nideas together",
+  getInTouch: "Get in touch",
   nav: {
     showcases: "Showcases",
     ourProducts: "Our products",
