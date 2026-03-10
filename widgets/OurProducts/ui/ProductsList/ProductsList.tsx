@@ -27,8 +27,9 @@ export const ProductsList = () => {
                     src={product.src}
                     alt={product.title}
                     fill
+                    unoptimized
                     className="object-cover"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, 525px"
                   />
                 </div>
                 <div className="bg-phone-btn rounded-2xl p-4 2xl:p-5">

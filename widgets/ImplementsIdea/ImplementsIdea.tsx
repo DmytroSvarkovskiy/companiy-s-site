@@ -7,9 +7,9 @@ export const ImplementsIdea = async () => {
   const t = await getI18n();
   return (
     <section className="section">
-      <GlassCard radius={0} blur={0.5}>
+      <GlassCard radius={0} blur={0.5} desktopFrom={0}>
         <div className="flex flex-col items-center w-full gap-4 xl:gap-5 py-44.5 md:py-30 lg:py-25 relative overflow-hidden">
-          <h3 className="font-semibold text-32 lg:text-48 2xl:text-64 uppercase whitespace-pre-line text-center">
+          <h3 className="font-semibold text-32 lg:text-48 2xl:text-64 uppercase  text-center">
             {t("timeToImplement")}
           </h3>
           <ContactModal trigger={<Button className="w-fit">{t("getInTouch")}</Button>} />

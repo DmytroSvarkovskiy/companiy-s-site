@@ -57,7 +57,9 @@
     --scrollbar-thumb: rgba(14, 16, 29, 0.28);
     --scrollbar-thumb-hover: rgba(14, 16, 29, 0.45);
     --scrollbar-track: transparent;
-    --success_icon: #0e101d;
+    --success-icon: #0e101d;
+    --map-active: #515674;
+    --map-inactive: #a9b1d5;
   }
 
   :root.dark {
@@ -102,7 +104,9 @@
     --scrollbar-thumb: rgba(255, 255, 255, 0.35);
     --scrollbar-thumb-hover: rgba(255, 255, 255, 0.55);
     --scrollbar-track: transparent;
-    --success_icon: #cad3ff;
+    --success-icon: #cad3ff;
+    --map-active: #cad3ff;
+    --map-inactive: #2c3046;
   }
 }
 
@@ -149,6 +153,9 @@
   --color-menu-hover: var(--menu-hover);
   --color-phone-btn: var(--mobile-input-btn);
   --color-success-icon: var(--success-icon);
+  --color-map-active: var(--map-active);
+  --color-map-inactive: var(--map-inactive);
+
   /* radius scale */
   --radius-sm: calc(var(--radius-base) - 6px);
   --radius-md: calc(var(--radius-base) - 4px);

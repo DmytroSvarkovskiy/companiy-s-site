@@ -42,6 +42,7 @@ export function GlassCard({
   desktopFrom = 1200,
 }: GlassCardProps) {
   const isDesktopGlass = useMediaQuery(`(min-width: ${desktopFrom}px)`);
+  const backdropBlurPx = clamp(Math.round(blur * 6), 4, 14);
 
   const stopHandlers = React.useMemo(() => {
     if (!stopScrollPropagation) return undefined;
@@ -53,8 +54,6 @@ export function GlassCard({
   }, [stopScrollPropagation]);
 
   if (!isDesktopGlass) {
-    const backdropBlurPx = clamp(Math.round(blur * 6), 4, 12);
-
     const Comp = as as React.ElementType;
 
     return (
@@ -87,7 +86,6 @@ export function GlassCard({
 
   const turbulenceBaseFrequency = frequency ?? preset.f;
   const turbulenceSeed = seed ?? preset.s;
-  const backdropBlurPx = clamp(Math.round(blur * 6), 0, 14);
 
   return (
     <CreativomaLiquidGlass

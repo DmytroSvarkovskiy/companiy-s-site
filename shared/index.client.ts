@@ -4,3 +4,4 @@ export * from "./CustomSheet/CustomSheet";
 export * from "./hooks";
 export * from "./InputPhone/InputPhone";
 export * from "./ui/hover-card";
+export * from "./ui/tooltip";

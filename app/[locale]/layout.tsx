@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { getCurrentLocale } from "@/lib";
 import { I18nProviderClient } from "@/lib/index.client";
 import { COOKIES_KEYS } from "@/shared/consts";
+import { TooltipProvider } from "@/shared/ui/tooltip";
 import { cn } from "@/shared/utils";
 import { Footer, Header } from "@/widgets";
 
@@ -40,9 +41,11 @@ export default async function RootLayout({
     <html lang={locale} className={cn(theme, "scroll-smooth")}>
       <body className={`${ibmPlexSans.className} antialiased flex flex-col`}>
         <I18nProviderClient locale={locale}>
-          <Header currentTheme={theme as "light" | "dark"} />
-          <main> {children}</main>
-          <Footer />
+          <TooltipProvider>
+            <Header currentTheme={theme as "light" | "dark"} />
+            <main> {children}</main>
+            <Footer />
+          </TooltipProvider>
         </I18nProviderClient>
       </body>
     </html>

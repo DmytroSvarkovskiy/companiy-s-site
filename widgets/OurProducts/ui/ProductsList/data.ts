@@ -1,6 +1,8 @@
 import { useScopedI18n } from "@/lib/index.client";
+import { NAV_HASH } from "@/shared/consts";
 
 type TProductCard = {
+  id: string;
   key: "restup" | "ecommerce";
   eyebrow: string;
   title: string;
@@ -15,9 +17,11 @@ type TProductCard = {
 
 export const useProjectsData = () => {
   const t = useScopedI18n("productsSection");
-
+  const idRestup = NAV_HASH.restup.replace(/^#/, "");
+  const idEComm = NAV_HASH.ecommerce.replace(/^#/, "");
   const productsCards = [
     {
+      id: idRestup,
       key: "restup",
       eyebrow: t("restup.eyebrow"),
       title: t("restup.title"),
@@ -41,6 +45,7 @@ export const useProjectsData = () => {
       },
     },
     {
+      id: idEComm,
       key: "ecommerce",
       eyebrow: t("ecommerce.eyebrow"),
       title: t("ecommerce.title"),

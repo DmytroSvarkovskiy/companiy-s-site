@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { COOKIES_KEYS } from "@/shared/consts";
 import {
+  AboutUs,
   ApproachBlock,
   Hero,
   HowWeHelp,
@@ -24,6 +25,7 @@ export default async function Home() {
       <HowWeHelp />
       <TechnicalStack />
       <ImplementsIdea />
+      <AboutUs />
     </>
   );
 }

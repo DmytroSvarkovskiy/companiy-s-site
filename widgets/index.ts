@@ -1,3 +1,4 @@
+export * from "./AboutUs/AboutUs";
 export * from "./ApproachBlock/ApproachBlock";
 export * from "./Footer/Footer";
 export * from "./Header/Header";

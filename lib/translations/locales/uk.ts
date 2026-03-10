@@ -203,4 +203,11 @@ export default {
       },
     },
   },
+  aboutUs: {
+    title: "About Us",
+    description1:
+      "KIT Global is an integrated information technology agency from Ukraine. We provide web and mobile product development services. We create projects for business, public organizations, educational and governmental institutions in Ukraine, Europe, and the USA. The agency is focused on effective solutions.",
+    description2:
+      "Our highly skilled team performs all stages of product creation — from audit to support and promotion of the finished product. This is appreciated by our customers because they do not need to look for multiple contractors, shorten development time, generate the objective cost of services.",
+  },
 } as const;
