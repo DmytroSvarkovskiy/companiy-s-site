@@ -6,6 +6,7 @@ export * from "./Hero/Hero";
 export * from "./HowWeHelp/HowWeHelp";
 export * from "./ImplementsIdea/ImplementsIdea";
 export * from "./OurProducts/OurProducts";
+export * from "./OurTeam/OurTeam";
 export * from "./PartnersTrustBlock/PartnersTrustBlock";
 export * from "./Showcases/Showcases";
 export * from "./TechnicalStack/TechnicalStack";

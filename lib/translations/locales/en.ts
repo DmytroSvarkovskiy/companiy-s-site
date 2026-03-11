@@ -204,10 +204,111 @@ export default {
     },
   },
   aboutUs: {
-    title: "Про нас",
+    title: "About Us",
     description1:
-      "KIT Global — це інтегрована агенція інформаційних технологій з України. Ми надаємо послуги з розробки веб- і мобільних продуктів. Створюємо проєкти для бізнесу, громадських організацій, освітніх і державних установ в Україні, Європі та США. Агенція зосереджена на ефективних рішеннях.",
+      "KIT Global is an integrated information technology agency from Ukraine. We provide web and mobile product development services. We create projects for business, public organizations, educational and governmental institutions in Ukraine, Europe, and the USA. The agency is focused on effective solutions.",
     description2:
-      "Наша висококваліфікована команда виконує всі етапи створення продукту — від аудиту до підтримки та просування готового проєкту. Це цінують наші клієнти, адже їм не потрібно шукати кількох підрядників, скорочуються терміни розробки та формується об’єктивна вартість послуг.",
+      "Our highly skilled team performs all stages of product creation — from audit to support and promotion of the finished product. This is appreciated by our customers because they do not need to look for multiple contractors, shorten development time, generate the objective cost of services.",
+  },
+  "our-team": {
+    ourTeam: "Our team",
+    coOwner: "co-owner",
+    headAndCEO: "Our head and CEO of the Company",
+    techHeartAndCTO: "Our tech heart and CTO",
+    awesomeTeam: "Our Awesome Team",
+    descriptionTeam:
+      "Our team creates flexible and effective solutions that help businesses grow. It is thanks to the professionalism and well-coordinated work of that we build long-term cooperation.",
+    members: {
+      yulia: {
+        name: "Yulia",
+        role: "Sales manager",
+      },
+      artemMarketing: {
+        name: "Artem",
+        role: "Lead marketing",
+      },
+      zakhar: {
+        name: "Zakhar",
+        role: "Lead front-end mobile engineer",
+      },
+      yaroslav: {
+        name: "Yaroslav",
+        role: "Project manager",
+      },
+      anton: {
+        name: "Anton",
+        role: "QA specialist",
+      },
+      dmytroLeadFrontend: {
+        name: "Dmytro",
+        role: "Lead frontend developer",
+      },
+      slava: {
+        name: "Slava",
+        role: "Front-end mobile developer",
+      },
+      svitlana: {
+        name: "Svitlana",
+        role: "UX/UI Designer",
+      },
+      anastasia: {
+        name: "Anastasia",
+        role: "Lead UX/UI designer",
+      },
+      daniel: {
+        name: "Daniel",
+        role: "Back-end developer",
+      },
+      artemBackend: {
+        name: "Artem",
+        role: "Back-end TeamLead Developer",
+      },
+      dmytroFrontendMobile: {
+        name: "Dmytro",
+        role: "Front-end mobile engineer",
+      },
+      alina: {
+        name: "Alina",
+        role: "HR-manager",
+      },
+      oleksandr: {
+        name: "Oleksandr",
+        role: "Web developer",
+      },
+      vadim: {
+        name: "Vadim",
+        role: "Graphic and motion designer",
+      },
+      andrii: {
+        name: "Andrii",
+        role: "DevOps engineer",
+      },
+      valeria: {
+        name: "Valeria",
+        role: "UX/UI designer",
+      },
+      danilo: {
+        name: "Danilo",
+        role: "Android developer",
+      },
+      evgenii: {
+        name: "Evgenii",
+        role: "Senior web developer",
+      },
+      alex: {
+        name: "Alex",
+        role: "iOS developer",
+      },
+      oleksiiOwner: {
+        name: "Oleksii",
+        role: "co-owner",
+        description: "Our head and CEO of the Company",
+      },
+      oleksandrOwner: {
+        name: "Oleksandr",
+        role: "co-owner",
+        description: "Our tech heart and CTO",
+      },
+    },
   },
 } as const;

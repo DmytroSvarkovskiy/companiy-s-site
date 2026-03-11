@@ -42,7 +42,7 @@ export function GlassCard({
   desktopFrom = 1200,
 }: GlassCardProps) {
   const isDesktopGlass = useMediaQuery(`(min-width: ${desktopFrom}px)`);
-  const backdropBlurPx = clamp(Math.round(blur * 6), 4, 14);
+  const backdropBlurPx = clamp(Math.round(blur * 6), 2, 14);
 
   const stopHandlers = React.useMemo(() => {
     if (!stopScrollPropagation) return undefined;

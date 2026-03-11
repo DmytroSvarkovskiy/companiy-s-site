@@ -18,3 +18,14 @@ export const NAV_HASH = {
   kitapp: "#kitapp",
   partners: "#partners",
 } as const;
+
+export const COMPANY_LINKS = {
+  Oleksiy: {
+    linkedin: "https://www.linkedin.com/in/oleksii-fedorenko-7683a668/",
+    facebook: "https://www.facebook.com/alexei.fedorenko",
+  },
+  Oleksandr: {
+    linkedin: "https://www.linkedin.com/in/alparhomenko/",
+    facebook: "https://www.facebook.com/aleksandr.parhomenko.787947",
+  },
+} as const;

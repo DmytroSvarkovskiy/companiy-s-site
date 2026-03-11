@@ -60,6 +60,7 @@
     --success-icon: #0e101d;
     --map-active: #515674;
     --map-inactive: #a9b1d5;
+    --owner-bg: #ffffff;
   }
 
   :root.dark {
@@ -107,6 +108,7 @@
     --success-icon: #cad3ff;
     --map-active: #cad3ff;
     --map-inactive: #2c3046;
+    --owner-bg: #2e3248;
   }
 }
 
@@ -114,6 +116,7 @@
   /* shadcn base */
   --color-background: var(--bg);
   --color-foreground: var(--fg);
+  --color-owner-bg: var(--owner-bg);
 
   --color-card: color-mix(in oklch, var(--bg) 92%, white);
   --color-card-foreground: var(--fg);
