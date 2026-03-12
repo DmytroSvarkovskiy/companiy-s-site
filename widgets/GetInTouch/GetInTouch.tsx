@@ -2,6 +2,7 @@ import { ContactForm, GlassCard } from "@/entities";
 import { TitleSection } from "@/entities/index.client";
 import { getScopedI18n } from "@/lib";
 import { ReviewSlider } from "./ui/index.client";
+import { ReviewLine } from "./ui/ReviewLine/ReviewLine";
 
 export const GetInTouch = async () => {
   const t = await getScopedI18n("get-in-touch");
@@ -18,7 +19,7 @@ export const GetInTouch = async () => {
         md:flex-row
         xl:gap-5"
         >
-          <div className="flex-1 flex flex-col gap-4 xl:gap-5 min-w-0">
+          <div className="flex-1 flex flex-col gap-4 xl:gap-5 min-w-0 md:min-h-153">
             {" "}
             <span className="w-full p-4 bg-primary rounded-xl">
               <p
@@ -35,6 +36,7 @@ export const GetInTouch = async () => {
           <ContactForm formClassname="flex-1 " />
         </div>
       </GlassCard>
+      <ReviewLine />
     </section>
   );
 };

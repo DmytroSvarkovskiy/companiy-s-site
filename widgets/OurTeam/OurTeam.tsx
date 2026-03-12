@@ -106,14 +106,14 @@ export const OurTeam = async () => {
                 href={COMPANY_LINKS.upwork}
                 className="hover:opacity-80 transition-opacity"
               >
-                <Image alt="facebook" width={40} height={40} src="/team/upwork.svg" />
+                <Image alt="facebook" width={40} height={40} src="/Icons/upwork.svg" />
               </Link>
               <Link
                 target="_blank"
                 href={COMPANY_LINKS.beehance}
                 className="hover:opacity-80 transition-opacity"
               >
-                <Image alt="linkedin" width={40} height={40} src="/team/be.svg" />
+                <Image alt="linkedin" width={40} height={40} src="/Icons/be.svg" />
               </Link>
             </div>
           </div>

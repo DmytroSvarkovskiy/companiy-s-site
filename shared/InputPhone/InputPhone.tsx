@@ -117,7 +117,7 @@ export function InputPhone({ label, error, value, onChange, id, placeholder }: I
           </PopoverContent>
         </Popover>
 
-        <div className="h-6 w-px bg-border" />
+        {/* <div className="h-6 w-px bg-border" /> */}
 
         <InputField
           label={label}
