@@ -374,6 +374,10 @@
     display: flex;
     width: 100%;
     overflow: hidden;
+    position: relative;
+
+    /* Додаємо маску, щоб логотипи плавно з'являлися і зникали */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 
   .marquee__track {
@@ -384,10 +388,14 @@
     width: max-content;
 
     will-change: transform;
-    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
 
     animation: marqueeMove 40s linear infinite;
+  }
+
+  .marquee:hover .marquee__track {
+    animation-play-state: paused;
   }
 
   @keyframes marqueeMove {
@@ -398,14 +406,23 @@
       transform: translate3d(-50%, 0, 0);
     }
   }
+
   .logo-filter {
     filter: grayscale(1) brightness(0.5) contrast(1.15);
     opacity: 0.7;
+    transition:
+      filter 0.3s ease,
+      opacity 0.3s ease;
   }
 
   .dark .logo-filter {
     filter: grayscale(1) brightness(1.25) contrast(1.05);
     opacity: 0.9;
+  }
+
+  .marquee__item:hover .logo-filter {
+    filter: grayscale(0) brightness(1);
+    opacity: 1;
   }
 }
 @layer utilities {

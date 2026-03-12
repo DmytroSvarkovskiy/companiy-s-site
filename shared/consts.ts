@@ -28,4 +28,6 @@ export const COMPANY_LINKS = {
     linkedin: "https://www.linkedin.com/in/alparhomenko/",
     facebook: "https://www.facebook.com/aleksandr.parhomenko.787947",
   },
+  upwork: "https://www.upwork.com/agencies/1009349505090379776/",
+  beehance: "https://www.behance.net/kitapp_pro",
 } as const;

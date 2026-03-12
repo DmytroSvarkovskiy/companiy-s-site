@@ -311,4 +311,14 @@ export default {
       },
     },
   },
+  "get-in-touch": {
+    title: "GET IN TOUCH",
+    description:
+      "We will create for you a perfect mobile application that will function perfectly and meet all the needs of both users and yours.",
+    cta: {
+      title: "Are you with us?",
+      description:
+        "Read our customer testimonials and find out why more than 3000 businesses have chosen Kit Global.",
+    },
+  },
 } as const;

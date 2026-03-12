@@ -1,6 +1,7 @@
 export * from "./AboutUs/AboutUs";
 export * from "./ApproachBlock/ApproachBlock";
 export * from "./Footer/Footer";
+export * from "./GetInTouch/GetInTouch";
 export * from "./Header/Header";
 export * from "./Hero/Hero";
 export * from "./HowWeHelp/HowWeHelp";

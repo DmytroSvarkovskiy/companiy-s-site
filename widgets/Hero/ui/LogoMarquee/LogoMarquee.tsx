@@ -5,7 +5,7 @@ export const LogoMarquee = () => {
   const items = [...icons, ...icons];
 
   return (
-    <div className="w-full overflow-hidden border border-y border-secondary mt-46 lg:mt-40 py-6 lg:py-8">
+    <div className="w-full overflow-hidden border-y border-secondary mt-46 lg:mt-40 py-6 lg:py-8">
       <div className="marquee">
         <div className="marquee__track">
           {items.map((src, idx) => (

@@ -3,6 +3,7 @@ import { COOKIES_KEYS } from "@/shared/consts";
 import {
   AboutUs,
   ApproachBlock,
+  GetInTouch,
   Hero,
   HowWeHelp,
   ImplementsIdea,
@@ -28,6 +29,7 @@ export default async function Home() {
       <ImplementsIdea />
       <AboutUs />
       <OurTeam />
+      <GetInTouch />
     </>
   );
 }
