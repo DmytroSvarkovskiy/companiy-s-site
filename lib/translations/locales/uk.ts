@@ -321,4 +321,12 @@ export default {
         "Прочитайте відгуки наших клієнтів і дізнайтеся, чому понад 3000 компаній обрали Kit Global.",
     },
   },
+  footer: {
+    company_name: "KIT GLOBAL LLC",
+    description: "Аутсорс-розробка мобільних і веб-додатків та продуктова компанія",
+    reg_number: "ЄДРПОУ 43344434",
+    contact: "Контакти",
+    trusted_by: "Нам довіряють",
+    location: "Локація",
+  },
 } as const;

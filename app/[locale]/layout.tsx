@@ -19,6 +19,7 @@ export const orbitron = Orbitron({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   display: "swap",
+  variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={cn(theme, "scroll-smooth")}>
-      <body className={`${ibmPlexSans.className} antialiased flex flex-col`}>
+      <body className={`${ibmPlexSans.className} ${orbitron.variable} antialiased flex flex-col`}>
         <I18nProviderClient locale={locale}>
           <TooltipProvider>
             <Header currentTheme={theme as "light" | "dark"} />

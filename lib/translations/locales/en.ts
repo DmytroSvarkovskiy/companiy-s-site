@@ -321,4 +321,12 @@ export default {
         "Read our customer testimonials and find out why more than 3000 businesses have chosen Kit Global.",
     },
   },
+  footer: {
+    company_name: "KIT GLOBAL LLC",
+    description: "Mobile & web apps outsource development and product company",
+    reg_number: "Reg. number 43344434",
+    contact: "Contact",
+    trusted_by: "Trusted by",
+    location: "Location",
+  },
 } as const;

@@ -10,7 +10,7 @@ export const ReviewLine = () => {
     "/reviews/upwork.png",
   ];
 
-  const items = [...icons, ...icons, ...icons];
+  const items = [...icons, ...icons];
 
   return (
     <div

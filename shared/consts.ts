@@ -30,4 +30,7 @@ export const COMPANY_LINKS = {
   },
   upwork: "https://www.upwork.com/agencies/1009349505090379776/",
   beehance: "https://www.behance.net/kitapp_pro",
+  phone1: "+38 091 48 100 23",
+  phone2: "+38 099 007 95 47",
+  email: "info@kitapp.pro",
 } as const;

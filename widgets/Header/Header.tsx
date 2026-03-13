@@ -1,11 +1,7 @@
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { orbitron } from "@/app/[locale]/layout";
-import { GlassCard, ThemeToggle } from "@/entities";
+import { GlassCard, Logo, ThemeToggle } from "@/entities";
 import { getScopedI18n } from "@/lib";
 import { ButtonRevealIcon } from "@/shared/index.client";
-import { cn } from "@/shared/utils";
 import { ContactModal } from "../index.client";
 import { BurgerMenu, ChangeLang, DesktopNav } from "./ui";
 
@@ -26,19 +22,7 @@ export const Header = async ({ currentTheme }: TProps) => {
         items-center
       "
           >
-            <Link href="/" className="flex items-center gap-1 text-header-fg">
-              <Image
-                loading="eager"
-                alt="logo"
-                src="/Icons/logo.svg"
-                width={60}
-                height={70}
-                className="w-8 h-7 md:w-9 md:h-11 2xl:w-9.5 2xl:h-11.5"
-              />
-              <p className={cn(orbitron.className, "text-18 tracking-wider hidden lg:block")}>
-                IT GLOBAL
-              </p>
-            </Link>
+            <Logo />
 
             <div className="hidden lg:flex justify-center">
               <DesktopNav />
