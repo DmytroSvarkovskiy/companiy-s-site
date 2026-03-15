@@ -22,12 +22,10 @@ export const Header = async ({ currentTheme }: TProps) => {
         items-center
       "
           >
-            <Logo />
-
+            <Logo imageClassName="w-9 h-11" textClassName="hidden lg:block" />{" "}
             <div className="hidden lg:flex justify-center">
               <DesktopNav />
             </div>
-
             <div className="flex items-center justify-end gap-5 xl:gap-7">
               <ThemeToggle defaultTheme={currentTheme} />
               <ChangeLang />

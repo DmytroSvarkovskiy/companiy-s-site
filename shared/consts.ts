@@ -33,4 +33,6 @@ export const COMPANY_LINKS = {
   phone1: "+38 091 48 100 23",
   phone2: "+38 099 007 95 47",
   email: "info@kitapp.pro",
+  facebook: "https://www.facebook.com/KITGlobalAgency",
+  linkedin: "https://www.linkedin.com/company/kit-global-llc",
 } as const;
