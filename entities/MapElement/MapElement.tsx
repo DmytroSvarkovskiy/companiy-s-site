@@ -9,8 +9,10 @@ import {
 import { useMemo } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/index.client";
 import { cn } from "@/shared/utils/tailwindUtils";
+import data from "./data.json";
 
-const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+const geoUrl = data;
+//  "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
 
 type CountryLabels = Record<string, string>;
 
