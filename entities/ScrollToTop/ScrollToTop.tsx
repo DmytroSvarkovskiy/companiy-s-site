@@ -1,7 +1,6 @@
 "use client";
 import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "@/shared";
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
