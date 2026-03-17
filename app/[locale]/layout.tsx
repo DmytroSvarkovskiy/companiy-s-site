@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Orbitron } from "next/font/google";
 import "../globals.css";
 import { cookies } from "next/headers";
+import { ScrollToTop } from "@/entities/index.client";
 import { getCurrentLocale, getI18n } from "@/lib";
 import { I18nProviderClient } from "@/lib/index.client";
 import { COOKIES_KEYS, LOCALES } from "@/shared/consts";
@@ -104,7 +105,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={cn(theme, "scroll-smooth")}>
-      <body className={`${ibmPlexSans.className} ${orbitron.variable} antialiased flex flex-col`}>
+      <body
+        className={`${ibmPlexSans.className} ${orbitron.variable} antialiased flex flex-col relative`}
+      >
         <I18nProviderClient locale={locale}>
           <TooltipProvider>
             <Header currentTheme={theme as "light" | "dark"} />
@@ -112,6 +115,7 @@ export default async function RootLayout({
             <Footer />
           </TooltipProvider>
         </I18nProviderClient>
+        <ScrollToTop />
       </body>
     </html>
   );
