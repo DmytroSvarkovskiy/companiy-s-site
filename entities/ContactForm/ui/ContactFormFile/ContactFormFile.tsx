@@ -36,6 +36,7 @@ export const ContactFormFile = () => {
         size="icon"
         className="w-14 h-14 rounded-md relative overflow-hidden"
         onClick={() => fileRef.current?.click()}
+        aria-label={hasFile ? "file attached" : "attach file"}
       >
         <Paperclip
           className={cn(
@@ -45,6 +46,7 @@ export const ContactFormFile = () => {
         />
 
         <Check
+          aria-hidden="true"
           className={cn(
             "size-5 absolute text-green-500 transition-all duration-200 ease-out",
             hasFile ? "scale-100 opacity-100" : "scale-75 opacity-0",

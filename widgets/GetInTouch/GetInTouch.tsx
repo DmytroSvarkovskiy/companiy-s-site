@@ -20,15 +20,14 @@ export const GetInTouch = async () => {
         xl:gap-5"
         >
           <div className="flex-1 flex flex-col gap-4 xl:gap-5 min-w-0 md:min-h-153">
-            {" "}
             <span className="w-full p-4 bg-primary rounded-xl">
-              <p
+              <h3
                 className="text-primary-foreground font-medium text-24
               md:text-28
               xl:font-semibold xl:text-32"
               >
                 {t("cta.title")}
-              </p>
+              </h3>
               <p className="text-menu text-16 mt-3">{t("cta.description")}</p>
             </span>
             <ReviewSlider />

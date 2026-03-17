@@ -15,7 +15,7 @@ export const Header = async ({ currentTheme }: TProps) => {
         <GlassCard radius={999} blur={0.9} distortion={0.3} profile="default">
           <div
             className="
-        p-4 md:p-4.5 2xl:p-5.5
+        px-4 md:p-4.5 2xl:p-5.5
         h-16 md:h-22.5
         w-full
         grid grid-cols-[auto_1fr_auto]

@@ -86,10 +86,20 @@ export const ReviewSlider = () => {
           <Image src={"/Icons/designRush.svg"} alt="design-rush" width={48} height={48}></Image>
         </div>
         <div className="flex gap-4">
-          <Button onClick={onPrev} className="w-12 h-12" variant={"slider"}>
+          <Button
+            onClick={onPrev}
+            className="w-12 h-12"
+            variant={"slider"}
+            aria-label="previous slide"
+          >
             <ChevronLeft className="size-6" />
           </Button>
-          <Button onClick={onNext} className="w-12 h-12" variant={"slider"}>
+          <Button
+            onClick={onNext}
+            className="w-12 h-12"
+            variant={"slider"}
+            aria-label="previous slide"
+          >
             <ChevronRight className="size-6" />
           </Button>
         </div>

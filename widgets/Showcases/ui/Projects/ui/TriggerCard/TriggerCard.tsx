@@ -30,6 +30,8 @@ export const TriggerCard = ({ project }: TProps) => {
           className="md:pointer-events-auto md:size-12 xl:size-16"
           variant={"hovered"}
           size={"icon"}
+          aria-label="open product info"
+          aria-haspopup="dialog"
         >
           <ChevronRight className="md:size-6" />
         </Button>

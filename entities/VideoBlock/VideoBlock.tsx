@@ -68,6 +68,7 @@ export const VideoBlock = ({
       )}
       onClick={togglePlay}
       onKeyDown={handleKeyDown}
+      aria-label={isPlaying ? "pause video" : "play video"}
     >
       <video
         ref={videoRef}
