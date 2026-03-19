@@ -73,7 +73,7 @@ export const VideoBlock = ({
       <video
         ref={videoRef}
         src={src}
-        muted={true}
+        muted={false}
         loop
         playsInline
         className={cn("absolute inset-0 h-full w-full object-cover", videoClassName)}
