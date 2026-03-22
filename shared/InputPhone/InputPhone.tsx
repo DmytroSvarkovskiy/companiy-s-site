@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import {
-  type CountryIso2,
   defaultCountries,
   FlagImage,
   parseCountry,
@@ -10,11 +9,11 @@ import {
 } from "react-international-phone";
 import "react-international-phone/style.css";
 
-import { GlassCard } from "@/entities";
 import { useCurrentLocale } from "@/lib/index.client";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import { cn } from "@/shared/utils";
 import { InputField } from "../InputField/InputField";
+import { CountrySelect } from "./ui/index.client";
 
 type InputPhoneProps = {
   label?: React.ReactNode;
@@ -34,90 +33,84 @@ const getCountryName = (iso2: string, locale: string) => {
   }
 };
 
-export function InputPhone({ label, error, value, onChange, id, placeholder }: InputPhoneProps) {
+export const InputPhone = ({ label, error, value, onChange, id, placeholder }: InputPhoneProps) => {
+  const locale = useCurrentLocale();
   const autoId = React.useId();
   const inputId = id ?? autoId;
-  const locale = useCurrentLocale();
   const [open, setOpen] = React.useState(false);
+  const [searchQuery, setSearchQuery] = React.useState("");
 
   const { inputValue, handlePhoneValueChange, country, setCountry, inputRef } = usePhoneInput({
-    defaultCountry: "ua",
+    defaultCountry: locale === "en" ? "gb" : "ua",
     value,
     disableDialCodeAndPrefix: true,
-    onChange: (data) => {
-      onChange?.(data.phone);
-    },
+    onChange: (data) => onChange?.(data.phone),
   });
 
+  const filteredCountries = React.useMemo(() => {
+    const query = searchQuery.toLowerCase();
+    return defaultCountries.filter((c) => {
+      const parsed = parseCountry(c);
+      const name = getCountryName(parsed.iso2, locale)?.toLowerCase();
+      return name?.includes(query) || parsed.dialCode.includes(query);
+    });
+  }, [searchQuery, locale]);
   return (
     <div className="w-full">
       <div
         className={cn(
-          "flex items-center h-12 rounded-md",
-          "bg-transparent border border-input",
-          "transition-[border-color,box-shadow] duration-200",
-          "focus-within:border-primary",
-          "focus-within:ring-3 focus-within:ring-primary/40",
-          error &&
-            "border-destructive focus-visible:ring-destructive/40 focus-within:ring-destructive/40",
+          "flex items-center h-12 rounded-md transition-[border-color,box-shadow] duration-200 bg-transparent border",
+          !error
+            ? [
+                "border-input",
+                "focus-within:border-primary",
+                "focus-within:ring-3 focus-within:ring-primary/40",
+              ]
+            : [
+                "border-destructive",
+                "focus-within:border-destructive",
+                "focus-within:ring-3 focus-within:ring-destructive/40",
+                "ring-destructive/20",
+              ],
         )}
       >
-        <Popover open={open} onOpenChange={setOpen}>
+        <Popover
+          open={open}
+          onOpenChange={(o) => {
+            setOpen(o);
+            if (!o) setSearchQuery("");
+          }}
+        >
           <PopoverTrigger asChild>
             <button
               type="button"
-              title={country.name}
-              className={cn(
-                "flex bg-phone-btn items-center gap-1 px-3 h-full text-16 text-header-fg rounded-l-md w-27",
-                "hover:bg-accent-foreground/10 transition-colors duration-200",
-                "focus:outline-none",
-              )}
+              className="shrink-0 flex bg-phone-btn items-center gap-1 px-3 h-full text-16 text-header-fg rounded-l-md w-27 hover:bg-accent-foreground/10 focus:outline-none"
             >
               <FlagImage iso2={country.iso2} />
-              <span className="">+{country.dialCode}</span>
-              <span className="opacity-60">▾</span>
+              <span>+{country.dialCode}</span>
+              <span className="opacity-60 text-12">▼</span>
             </button>
           </PopoverTrigger>
 
           <PopoverContent
-            side="bottom"
             align="start"
             sideOffset={6}
-            className="p-0 bg-transparent border-0 shadow-none"
+            className="p-0 bg-transparent border-0 shadow-none z-110"
           >
-            <GlassCard className="w-70 max-h-72 " radius={16} blur={8} stopScrollPropagation>
-              <ul className="py-1 w-full overflow-x-hidden overflow-y-auto h-70">
-                {defaultCountries.map((c) => {
-                  const parsed = parseCountry(c);
-                  const active = parsed.iso2 === country.iso2;
-                  const localizedName = getCountryName(parsed.iso2, locale) ?? parsed.name;
-                  return (
-                    <li key={parsed.iso2}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setCountry(parsed.iso2 as CountryIso2);
-                          setOpen(false);
-                        }}
-                        className={cn(
-                          "w-full flex items-center gap-2 px-3 py-2 text-16 text-left",
-                          "hover:bg-muted/40",
-                          active && "text-primary bg-primary/10",
-                        )}
-                      >
-                        <FlagImage iso2={parsed.iso2} />
-                        <span className="flex-1">{localizedName}</span>
-                        <span className="text-muted-foreground">+{parsed.dialCode}</span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </GlassCard>
+            <CountrySelect
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              countries={filteredCountries}
+              onSelect={(p) => {
+                setCountry(p.iso2);
+                setOpen(false);
+              }}
+              selectedIso2={country.iso2}
+              locale={locale}
+              getCountryName={getCountryName}
+            />
           </PopoverContent>
         </Popover>
-
-        {/* <div className="h-6 w-px bg-border" /> */}
 
         <InputField
           label={label}
@@ -129,7 +122,7 @@ export function InputPhone({ label, error, value, onChange, id, placeholder }: I
           onChange={handlePhoneValueChange}
           error={error}
           wrapperClassName="flex-1 h-full"
-          errorClassname="-left-28"
+          errorClassname="-left-27"
           inputClassName={cn(
             "h-full w-full",
             "border-0 rounded-none",
@@ -140,4 +133,4 @@ export function InputPhone({ label, error, value, onChange, id, placeholder }: I
       </div>
     </div>
   );
-}
+};

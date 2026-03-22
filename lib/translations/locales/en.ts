@@ -1,6 +1,8 @@
 export default {
   timeToImplement: "Time to implement\nideas together",
   getInTouch: "Get in touch",
+  search_country: "Search country...",
+  no_results: "No results",
   metaTitle: "Mobile App & Web Development Solutions for Business | Kit Global",
   metaDescription:
     "Full-cycle mobile app and web development for business. UX/UI design, development, scaling, and technical support. Book a consultation today!",

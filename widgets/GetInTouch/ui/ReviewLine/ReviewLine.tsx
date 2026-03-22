@@ -14,7 +14,7 @@ export const ReviewLine = () => {
 
   return (
     <div
-      className="w-full overflow-hidden border-y border-secondary/20 py-8 bg-black/10 dark:bg-transparent
+      className="w-full overflow-hidden border-y border-secondary/20 py-8 bg-muted/90
     mt-10 lg:mt-12 2xl:mt-16"
     >
       <div className="marquee">
@@ -26,7 +26,7 @@ export const ReviewLine = () => {
                 alt="review platform"
                 width={160}
                 height={60}
-                className="logo-filter object-contain h-10 w-auto transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                className="object-contain h-10 w-auto"
               />
             </div>
           ))}

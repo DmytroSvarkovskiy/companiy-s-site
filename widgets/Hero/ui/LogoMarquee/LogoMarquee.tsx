@@ -5,7 +5,7 @@ export const LogoMarquee = () => {
   const items = [...icons, ...icons];
 
   return (
-    <div className="w-full overflow-hidden border-y border-secondary mt-46 lg:mt-40 py-6 lg:py-8 ">
+    <div className="w-full overflow-hidden border-y border-secondary mt-46 lg:mt-40 py-6 lg:py-8 bg-muted/90">
       <div className="marquee">
         <div className="marquee__track">
           {items.map((src, idx) => (
@@ -18,7 +18,7 @@ export const LogoMarquee = () => {
                 alt="logo"
                 width={175}
                 height={45}
-                className="logo-filter object-contain w-full h-full"
+                className=" object-contain w-full h-full"
               />
             </div>
           ))}

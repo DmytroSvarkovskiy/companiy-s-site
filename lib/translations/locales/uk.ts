@@ -1,7 +1,9 @@
 export default {
   timeToImplement: "Час втілювати\nідеї разом",
+  search_country: "Пошук країни...",
   getInTouch: "Зв'яжіться з нами",
   metaTitle: "Розробка мобільних додатків та веб-рішень для бізнесу | Kit Global",
+  no_results: "Нічого не знайдено",
   metaDescription:
     "Повний цикл розробки мобільних додатків та веб-рішень для бізнесу. UX/UI, програмування, масштабування та технічна підтримка. Замовляйте консультацію!",
 
@@ -14,7 +16,7 @@ export default {
     contactUs: "Звʼязатися з нами",
     restup: "Restup",
     ecommerce: "Е-комерс",
-    techStack: "Технологічний стек",
+    techStack: "Технічний стек",
     ourApproach: "Наш підхід",
     ourTeam: "Наша команда",
     kitapp: "Kitapp",

@@ -212,7 +212,9 @@
   body {
     @apply bg-background text-foreground  overflow-x-hidden;
   }
-
+  input[type="tel"] {
+    -webkit-tap-highlight-color: transparent;
+  }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
@@ -380,7 +382,6 @@
     overflow: hidden;
     position: relative;
 
-    /* Додаємо маску, щоб логотипи плавно з'являлися і зникали */
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 

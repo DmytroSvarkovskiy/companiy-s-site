@@ -11,7 +11,7 @@ export const ProductsList = () => {
   return (
     <ul className="mt-8 xl:mt-10 2xl:mt-12 grid grid-cols-1 gap-4 lg:gap-5 justify-between; w-full md:grid-cols-2">
       {products?.map((product) => (
-        <li key={product.title}>
+        <li key={product.title} id={product.id}>
           <GlassCard hoverGradient className="flex flex-col w-full p-6 2xl:p-9">
             <Reveal preset="zoomSoft" asChild className="h-full">
               <div>
