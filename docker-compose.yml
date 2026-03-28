@@ -1,0 +1,9 @@
+# dev
+version: '3.8'
+services:
+  kit-global-site-dev:
+    container_name: kit-global-site-dev
+    build: .
+    image: kit-global-site-dev
+    ports:
+      - '4020:3000'
